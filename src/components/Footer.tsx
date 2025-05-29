@@ -96,7 +96,7 @@ const Footer = () => {
         <div className="border-t border-navy-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="text-navy-400 text-sm">
-              © 2024 EagleVerse AI. All rights reserved. Transforming salons worldwide.
+              © 2025 EagleVerse AI. All rights reserved. Transforming salons worldwide.
             </div>
 
             <form onSubmit={handleNewsletterSubmit} className="flex space-x-3">

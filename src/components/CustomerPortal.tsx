@@ -14,18 +14,18 @@ const CustomerPortal = ({ onClose }: CustomerPortalProps) => {
     {
       id: 1,
       name: 'Sarah Johnson',
-      lastAnalysis: '2024-01-15',
+      lastAnalysis: '2025-01-15',
       improvementScore: 73,
-      nextAppointment: '2024-02-01',
+      nextAppointment: '2025-02-01',
       treatments: 6,
       totalRevenue: '$1,247'
     },
     {
       id: 2,
       name: 'Emily Chen', 
-      lastAnalysis: '2024-01-10',
+      lastAnalysis: '2025-01-10',
       improvementScore: 89,
-      nextAppointment: '2024-01-28',
+      nextAppointment: '2025-01-28',
       treatments: 8,
       totalRevenue: '$2,156'
     }

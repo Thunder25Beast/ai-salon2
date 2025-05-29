@@ -36,7 +36,7 @@ const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: Naviga
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => onTabChange(item.id)}
+                // onClick={() => onTabChange(item.id)}
                 className={`font-medium transition-colors ${
                   activeTab === item.id 
                     ? 'text-coral-400' 
@@ -47,18 +47,18 @@ const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: Naviga
               </button>
             ))}
             <button
-              onClick={() => onTabChange('demo')}
-              className={`font-medium flex items-center space-x-2 transition-colors ${
-                activeTab === 'demo' 
-                  ? 'text-coral-400' 
-                  : 'text-navy-200 hover:text-coral-400'
-              }`}
+              // onClick={() => onTabChange('demo')}
+              // className={`font-medium flex items-center space-x-2 transition-colors ${
+              //   activeTab === 'demo' 
+              //     ? 'text-coral-400' 
+              //     : 'text-navy-200 hover:text-coral-400'
+              // }`}
             >
               <BarChart3 className="h-4 w-4" />
               <span>Try Demo</span>
             </button>
             <button
-              onClick={onShowPortal}
+              // onClick={onShowPortal}
               className="btn-secondary flex items-center space-x-2"
             >
               <Users className="h-4 w-4" />
