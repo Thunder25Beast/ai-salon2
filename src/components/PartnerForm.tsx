@@ -1,0 +1,358 @@
+
+import React, { useState } from 'react';
+import { Send, CheckCircle, TrendingUp, Users, Zap } from 'lucide-react';
+import { useToast } from '../hooks/use-toast';
+
+const PartnerForm = () => {
+  const [formData, setFormData] = useState({
+    // Salon Information
+    salonName: '',
+    numberOfBranches: '',
+    city: '',
+    avgMonthlyFootfall: '',
+    clientType: '',
+    
+    // Primary Contact
+    contactName: '',
+    email: '',
+    phone: '',
+    designation: '',
+    
+    // Business Details
+    businessType: '',
+    gstin: '',
+    preferredStartDate: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Partner form submitted:', formData);
+    setIsSubmitted(true);
+    toast({
+      title: "Partnership Request Submitted!",
+      description: "We'll contact you within 24 hours to discuss your revenue transformation.",
+    });
+  };
+
+  const benefits = [
+    {
+      icon: TrendingUp,
+      title: "300% Revenue Boost Guarantee",
+      description: "Or we work for free until you hit targets"
+    },
+    {
+      icon: Users,
+      title: "90-Day Client Retention Goal",
+      description: "Comprehensive training and support included"
+    },
+    {
+      icon: Zap,
+      title: "Same-Day Implementation",
+      description: "Start converting clients immediately"
+    }
+  ];
+
+  if (isSubmitted) {
+    return (
+      <section id="partner" className="section-padding bg-navy-900">
+        <div className="container-width">
+          <div className="max-w-2xl mx-auto text-center glass-effect rounded-3xl p-12">
+            <CheckCircle className="h-20 w-20 text-coral-500 mx-auto mb-6" />
+            <h2 className="text-3xl font-serif font-bold mb-4 text-navy-50">
+              Welcome to the Revolution!
+            </h2>
+            <p className="text-navy-300 text-lg mb-6">
+              Our revenue optimization specialist will contact you within 24 hours to schedule your salon transformation.
+            </p>
+            <div className="text-coral-400 font-semibold">
+              Get ready to never have empty chairs again.
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section id="partner" className="section-padding bg-navy-900">
+      <div className="container-width">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-navy-50">
+            Ready to Transform
+            <span className="gradient-text"> Your Salon?</span>
+          </h2>
+          <p className="text-xl text-navy-300 max-w-3xl mx-auto">
+            Join 2,847+ salons that increased their revenue by 247% with our AI system
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h3 className="text-2xl font-serif font-semibold mb-8 text-navy-50">
+              What You Get as Our Partner:
+            </h3>
+            
+            <div className="space-y-6">
+              {benefits.map((benefit, index) => (
+                <div 
+                  key={index}
+                  className="flex items-start space-x-4 p-6 glass-effect rounded-xl hover-lift"
+                >
+                  <div className="bg-coral-500 p-3 rounded-xl flex-shrink-0">
+                    <benefit.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-navy-50 mb-2">
+                      {benefit.title}
+                    </h4>
+                    <p className="text-navy-300">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 p-6 bg-coral-500/10 rounded-2xl border border-coral-500/20">
+              <div className="text-coral-400 font-semibold mb-2">Limited Time Offer:</div>
+              <div className="text-navy-50 text-lg">
+                First 100 partners get <span className="font-bold">6 months free</span> implementation support
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-effect rounded-2xl p-8">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              {/* Salon Information Section */}
+              <div>
+                <h3 className="text-xl font-semibold text-navy-50 mb-6 border-b border-navy-700 pb-2">
+                  Salon Information
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Salon Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.salonName}
+                      onChange={(e) => setFormData({...formData, salonName: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                      placeholder="Your salon's name"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Number of Branches *
+                    </label>
+                    <select
+                      required
+                      value={formData.numberOfBranches}
+                      onChange={(e) => setFormData({...formData, numberOfBranches: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                    >
+                      <option value="">Select branches</option>
+                      <option value="1">1 Branch</option>
+                      <option value="2-5">2-5 Branches</option>
+                      <option value="6-10">6-10 Branches</option>
+                      <option value="11-20">11-20 Branches</option>
+                      <option value="20+">20+ Branches</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      City *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.city}
+                      onChange={(e) => setFormData({...formData, city: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                      placeholder="Primary city location"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Avg Monthly Footfall *
+                    </label>
+                    <select
+                      required
+                      value={formData.avgMonthlyFootfall}
+                      onChange={(e) => setFormData({...formData, avgMonthlyFootfall: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                    >
+                      <option value="">Select footfall</option>
+                      <option value="under-100">Under 100 clients</option>
+                      <option value="100-300">100-300 clients</option>
+                      <option value="300-500">300-500 clients</option>
+                      <option value="500-1000">500-1000 clients</option>
+                      <option value="1000+">1000+ clients</option>
+                    </select>
+                  </div>
+
+                  <div className="md:col-span-2">
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Client Type *
+                    </label>
+                    <select
+                      required
+                      value={formData.clientType}
+                      onChange={(e) => setFormData({...formData, clientType: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                    >
+                      <option value="">Select client type</option>
+                      <option value="men">Men</option>
+                      <option value="women">Women</option>
+                      <option value="unisex">Unisex</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Primary Contact Section */}
+              <div>
+                <h3 className="text-xl font-semibold text-navy-50 mb-6 border-b border-navy-700 pb-2">
+                  Primary Contact
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Contact Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.contactName}
+                      onChange={(e) => setFormData({...formData, contactName: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                      placeholder="Contact person name"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Designation *
+                    </label>
+                    <select
+                      required
+                      value={formData.designation}
+                      onChange={(e) => setFormData({...formData, designation: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                    >
+                      <option value="">Select designation</option>
+                      <option value="owner">Owner</option>
+                      <option value="manager">Manager</option>
+                      <option value="director">Director</option>
+                      <option value="partner">Partner</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                      placeholder="contact@salon.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Business Details Section */}
+              <div>
+                <h3 className="text-xl font-semibold text-navy-50 mb-6 border-b border-navy-700 pb-2">
+                  Business Details
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Business Type *
+                    </label>
+                    <select
+                      required
+                      value={formData.businessType}
+                      onChange={(e) => setFormData({...formData, businessType: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                    >
+                      <option value="">Select business type</option>
+                      <option value="partnership">Partnership</option>
+                      <option value="independent">Independent</option>
+                      <option value="franchise">Franchise</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-navy-200 font-medium mb-2">
+                      GSTIN
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.gstin}
+                      onChange={(e) => setFormData({...formData, gstin: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                      placeholder="22AAAAA0000A1Z5 (Optional)"
+                    />
+                  </div>
+
+                  <div className="md:col-span-2">
+                    <label className="block text-navy-200 font-medium mb-2">
+                      Preferred Start Date
+                    </label>
+                    <input
+                      type="date"
+                      value={formData.preferredStartDate}
+                      onChange={(e) => setFormData({...formData, preferredStartDate: e.target.value})}
+                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full btn-primary flex items-center justify-center space-x-3 text-lg"
+              >
+                <span>Start My Revenue Transformation</span>
+                <Send className="h-5 w-5" />
+              </button>
+
+              <p className="text-navy-400 text-sm text-center">
+                We'll contact you within 24 hours to discuss your custom implementation plan
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PartnerForm;

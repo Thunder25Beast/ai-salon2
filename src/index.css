@@ -1,0 +1,109 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 210 40% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 8%;
+
+    --primary: 210 100% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 40% 8%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 94%;
+    --accent-foreground: 210 40% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 100% 20%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 210 100% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 100% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 100% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 210 100% 6%;
+
+    --secondary: 215 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 215 32% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 32% 17%;
+    --input: 215 32% 17%;
+    --ring: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-navy-950 text-navy-50 font-sans;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-coral-400 to-coral-600 bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/10 border border-white/20;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-coral-500 hover:bg-coral-600 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-coral-500/25;
+  }
+
+  .btn-secondary {
+    @apply bg-navy-700 hover:bg-navy-600 text-navy-50 font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 border border-navy-600;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+}
