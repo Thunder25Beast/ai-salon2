@@ -1,73 +1,131 @@
-# Welcome to your Lovable project
+# Skin Sense Reimagine
 
-## Project info
+A React application bootstrapped with Vite and styled using Tailwind CSS. This project provides a modern, fast, and responsive UI for analyzing and tracking skin health.
 
-**URL**: https://lovable.dev/projects/d359c003-a8b3-44df-bbbe-3346e21ff767
+---
 
-## How can I edit this code?
+## Table of Contents
 
-There are several ways of editing your application.
+<!-- - [Demo](#demo)   -->
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Prerequisites](#prerequisites)  
+- [Installation](#installation)  
+- [Available Scripts](#available-scripts)  
+<!-- - [Folder Structure](#folder-structure)   -->
+- [Contributing](#contributing)  
+- [License](#license)  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d359c003-a8b3-44df-bbbe-3346e21ff767) and start prompting.
+<!-- ## Demo -->
 
-Changes made via Lovable will be committed automatically to this repo.
+<!-- Add a screenshot or link to a live demo here -->
+<!-- ![App Screenshot](./screenshot.png)
 
-**Use your preferred IDE**
+--- -->
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Fast development with Vite’s hot module replacement  
+- Utility-first styling with Tailwind CSS  
+- React functional components and hooks  
+- Responsive, mobile-first design  
+- Easily extendable component structure  
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Framework:** React  
+- **Bundler:** Vite  
+- **Styling:** Tailwind CSS  
+- **Package Manager:** npm (or yarn/pnpm)  
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Prerequisites
+
+- Node.js v14 or higher  
+- npm v6 or higher (or Yarn/Pnpm)  
+
+---
+
+## Installation
+
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/Thunder25Beast/ai-salon2.git
+   cd ai-salon2
+   ```
+
+2. **Install dependencies**  
+   ```bash
+   npm install
+   # or
+   yarn
+   # or
+   pnpm install
+   ```
+
+3. **Start the development server**  
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. **Open in browser**  
+   Visit `http://localhost:8080` (or the port shown in your console).
+
+---
+
+## Available Scripts
+
+| Script         | Description                                    |
+| -------------- | ---------------------------------------------- |
+| `dev`          | Starts Vite development server with HMR        |
+| `build`        | Bundles the app for production                 |
+| `preview`      | Locally preview the production build           |
+| `lint`         | Runs ESLint checks (if configured)             |
+| `format`       | Formats code with Prettier (if configured)     |
+
+---
+
+<!-- ## Folder Structure
+
+```
+ai-salon2/
+├── public/            # Static assets (favicon, robots.txt)
+├── src/
+│   ├── assets/        # Images, icons, fonts
+│   ├── components/    # Reusable React components
+│   ├── pages/         # Page-level components
+│   ├── styles/        # Tailwind config & global CSS
+│   ├── App.jsx        # Root app component
+│   └── main.jsx       # App entry point
+├── index.html         # Vite HTML template
+├── tailwind.config.js # Tailwind configuration
+├── vite.config.js     # Vite configuration
+└── package.json       # Project metadata & scripts
 ```
 
-**Edit a file directly in GitHub**
+--- -->
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Contributing
 
-**Use GitHub Codespaces**
+1. Fork the repository  
+2. Create a feature branch (`git checkout -b feature/YourFeature`)  
+3. Commit your changes (`git commit -m 'Add some feature'`)  
+4. Push to the branch (`git push origin feature/YourFeature`)  
+5. Open a Pull Request  
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## License
 
-This project is built with:
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/d359c003-a8b3-44df-bbbe-3346e21ff767) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
