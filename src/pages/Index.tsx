@@ -32,8 +32,8 @@ const Index = () => {
         
         <TabsContent value="home" className="mt-0">
           <Hero onShowDemo={() => setShowDemo(true)} />
-          {/* <Features />
-          <Testimonials /> */}
+          <Features />
+          <Testimonials />
         </TabsContent>
         
         <TabsContent value="features" className="mt-0">

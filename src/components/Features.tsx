@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Eye, TrendingUp, BarChart3, Zap, Crown, Repeat } from 'lucide-react';
 
@@ -6,46 +5,47 @@ const Features = () => {
   const features = [
     {
       icon: Eye,
-      title: "AI Microscopic Detection",
-      subtitle: "Catch What Human Eyes Miss",
-      description: "Our AI spots dark spots, early aging signs, and skin damage that even experienced aestheticians overlook. Show clients problems they didn't know existed.",
-      stats: "Detects 340% more issues than manual inspection"
+      title: "Advanced AI Detection",
+      subtitle: "Show What's Barely Visible",
+      description: "Our cutting-edge AI reveals microscopic skin issues, early aging signs, and hidden damage that creates instant trust and necessity for your services.",
+      stats: "Detects issues invisible to naked eye"
     },
     {
       icon: TrendingUp,
-      title: "Instant Upselling Engine", 
-      subtitle: "Turn Every Visit Into Revenue",
-      description: "Generate personalized treatment plans instantly. AI creates perfect upselling opportunities based on actual skin analysis, not guesswork.",
-      stats: "Average 3.2 additional services per client"
+      title: "Customer Retention Loop", 
+      subtitle: "Create Lifelong Clients",
+      description: "Transform one-time visitors into loyal customers who book regular appointments because they can see their skin improvement journey.",
+      stats: "Clients book upto 3x more follow-up sessions"
     },
     {
       icon: BarChart3,
-      title: "Progress Addiction System",
-      subtitle: "Make Clients Crave Results",
-      description: "Visual progress tracking creates emotional investment. Clients become addicted to seeing improvements, ensuring they never skip appointments.",
-      stats: "94% clients book next appointment before leaving"
+      title: "Progress Tracking System",
+      subtitle: "Visual Proof of Results",
+      description: "Clients become emotionally invested when they see measurable improvements. Creates addiction to progress and regular bookings.",
+      stats: "Upto 94% clients return within 30 days"
     },
     {
       icon: Zap,
-      title: "Real-Time Scoring",
-      subtitle: "Gamify Skin Health",
-      description: "Rate skin issues from 1-100. Clients love improving their scores. Creates competitive mindset that drives consistent bookings.",
-      stats: "Clients improve scores 67% faster with regular visits"
+      title: "Instant Analysis",
+      subtitle: "Real-Time Skin Scoring",
+      description: "Get comprehensive skin health scores in seconds. Turn consultations into compelling experiences that clients can't ignore.",
+      stats: "Complete analysis in under 30 seconds"
     },
     {
       icon: Crown,
-      title: "Premium Positioning",
-      subtitle: "Justify Higher Prices", 
-      description: "AI technology positions your salon as cutting-edge. Clients happily pay premium prices for advanced technology and personalized care.",
-      stats: "Average 45% price increase with AI positioning"
-    },
-    {
-      icon: Repeat,
-      title: "Retention Automation",
-      subtitle: "Never Lose a Client Again",
-      description: "Automated follow-up schedules based on skin improvement timelines. AI predicts optimal treatment intervals for maximum results.",
-      stats: "Client lifetime value increased by 312%"
+      title: "Professional Credibility",
+      subtitle: "Technology-Powered Expertise", 
+      description: "Position yourself as the most advanced salon in your area. AI technology elevates your professional image and justifies premium pricing.",
+      stats: "Increase service value perception by upto 60%"
     }
+    // },
+    // {
+    //   icon: Repeat,
+    //   title: "Automated Follow-ups",
+    //   subtitle: "Never Lose a Client",
+    //   description: "AI predicts optimal treatment schedules and reminds clients when it's time for their next session based on skin improvement patterns.",
+    //   stats: "Reduce client churn by 80%"
+    // }
   ];
 
   return (
@@ -53,15 +53,15 @@ const Features = () => {
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-navy-50">
-            The Complete Client
-            <span className="gradient-text"> Retention System</span>
+            What We Do:
+            <span className="gradient-text block">Advanced AI for Salon Success</span>
           </h2>
           <p className="text-xl text-navy-300 max-w-3xl mx-auto">
-            Transform your salon into a revenue-generating machine that clients can't resist
+            Our AI makes every client see what they never knew existed, creating unbreakable trust on your salon
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {features.map((feature, index) => (
             <div 
               key={index}
@@ -89,6 +89,18 @@ const Features = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-serif font-bold mb-4 text-navy-50">
+              Why Salons Choose Our AI Technology
+            </h3>
+            <p className="text-navy-300 text-lg leading-relaxed">
+              We're one of the first to bring advanced AI skin analysis to salons. Show your clients what they can't see, 
+              create trust through technology, and build customer lifetime value that transforms your business.
+            </p>
+          </div>
         </div>
       </div>
     </section>
