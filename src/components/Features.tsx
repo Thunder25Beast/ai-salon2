@@ -37,15 +37,15 @@ const Features = () => {
       subtitle: "Technology-Powered Expertise", 
       description: "Position yourself as the most advanced salon in your area. AI technology elevates your professional image and justifies premium pricing.",
       stats: "Increase service value perception by upto 60%"
+    
+    },
+    {
+      icon: Repeat,
+      title: "Automated Follow-ups",
+      subtitle: "Never Lose a Client",
+      description: "AI predicts optimal treatment schedules for your clients like when it's the time for their next session based on skin improvement patterns.",
+      stats: "Reduce client churn by 80%"
     }
-    // },
-    // {
-    //   icon: Repeat,
-    //   title: "Automated Follow-ups",
-    //   subtitle: "Never Lose a Client",
-    //   description: "AI predicts optimal treatment schedules and reminds clients when it's time for their next session based on skin improvement patterns.",
-    //   stats: "Reduce client churn by 80%"
-    // }
   ];
 
   return (
