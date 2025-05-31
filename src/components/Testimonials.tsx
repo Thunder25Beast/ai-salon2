@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Shield, Users, Award } from 'lucide-react';
 
@@ -141,7 +140,7 @@ const Testimonials = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center p-4 glass-effect rounded-2xl">
               <Shield className="h-12 w-12 text-coral-400 mx-auto mb-3" />
-              <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">94% Accuracy</h3>
+              <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">85% Accuracy</h3>
               <p className="text-navy-300">AI-powered skin analysis with clinical-grade precision</p>
             </div>
             
@@ -154,8 +153,47 @@ const Testimonials = () => {
             <div className="text-center p-4 glass-effect rounded-2xl">
               <Award className="h-12 w-12 text-coral-400 mx-auto mb-3" />
               <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">IIT Bombay Team</h3>
-              <p className="text-navy-300">Built by top engineering talent from India's premier institute</p>
+              <p className="text-navy-300">Built by top engineering talent from India's premier institute IIT Bombay</p>
             </div>
+          </div>
+        </div>
+      </div>
+      {/* Our Team Section */}
+      <div className="container-width mt-20">
+        <h2 className="text-4xl text-center md:text-5xl font-serif font-bold mb-4 text-navy-50">
+          Meet Our Team
+        </h2>
+        <p className="text-xl text-navy-300 max-w-3xl mx-auto text-center mb-10">
+          The visionaries behind SkinSense AI, blending deep tech, clinical expertise, and a passion for beauty innovation.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {/* Founder 1 */}
+          <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Founder 1" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
+            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Saksham Kumar</div>
+            <div className="text-coral-400 font-medium mb-2 text-center">CEO & Founder</div>
+            <div className="text-navy-300 text-center text-sm">Ex-IIT Bombay, 7+ years in AI/ML, passionate about making advanced tech accessible to salons.</div>
+          </div>
+          {/* Founder 2 */}
+          <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Founder 2" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
+            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Priya Sharma</div>
+            <div className="text-coral-400 font-medium mb-2 text-center">COO & Product</div>
+            <div className="text-navy-300 text-center text-sm">Beauty industry expert, ex-L'Oréal, ensures our AI fits real salon workflows and delights clients.</div>
+          </div>
+          {/* Founder 3 */}
+          <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Founder 3" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
+            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Aryamann</div>
+            <div className="text-coral-400 font-medium mb-2 text-center">CTO</div>
+            <div className="text-navy-300 text-center text-sm">Full-stack engineer, ex-Flipkart, builds robust, secure, and scalable AI platforms for beauty tech.</div>
+          </div>
+          {/* Founder 4 */}
+          <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Founder 4" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
+            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Simran Kaur</div>
+            <div className="text-coral-400 font-medium mb-2 text-center">Clinical Advisor</div>
+            <div className="text-navy-300 text-center text-sm">Dermatologist, 10+ years in clinical practice, ensures our AI is safe, accurate, and trusted by professionals.</div>
           </div>
         </div>
       </div>

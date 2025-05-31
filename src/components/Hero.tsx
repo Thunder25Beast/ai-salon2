@@ -18,9 +18,9 @@ const Hero = ({ onShowDemo }: HeroProps) => {
         <img 
           src={aisalon} 
           alt="AI Salon Background" 
-          className="w-full h-full object-cover opacity-15 mix-blend-multiply" 
-                />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 opacity-80" />
+          className="w-full h-full object-cover opacity-30 mix-blend-multiply" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 opacity-70" />
       </div>
       {/* Faded background elements */}
       {/* <div className="absolute inset-0 opacity-10 pointer-events-none select-none z-0">
@@ -39,7 +39,7 @@ const Hero = ({ onShowDemo }: HeroProps) => {
             Show them what no one else can see and they will never leave your chair. <br/>
             Our advanced AI elevates every consultation into a new transformative experience <span className="text-coral-400 font-semibold"> with zero hardware installation </span>  that creates
             <span className="text-coral-400 font-semibold"> lifelong customer loyalty </span>
-            and can increase your revenue by  <span className="text-coral-400 font-semibold">upto 150% </span> 
+            and can increase your revenue   <span className="text-coral-400 font-semibold">by 150% </span> 
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BarChart3, TrendingUp, Award } from 'lucide-react';
 
@@ -7,40 +6,58 @@ const Gallery = () => {
   
   const results = [
     {
-      before: "https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      after: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      title: "Acne Reduction Journey",
-      summary: "87% reduction in active breakouts",
-      satisfaction: "4.9/5",
-      treatments: 6,
-      revenue: "$1,247"
+      before: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      after: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Dark Circles Detection",
+      summary: "AI detected under-eye darkness: 82% confidence",
+      satisfaction: "-",
+      treatments: "-",
+      revenue: "-"
     },
     {
-      before: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      after: "https://images.unsplash.com/photo-1494790108755-2616b612b977?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      title: "Anti-Aging Transformation",
-      summary: "73% improvement in fine lines",
-      satisfaction: "4.8/5",
-      treatments: 8,
-      revenue: "$2,156"
+      before: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      after: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Wrinkle Analysis",
+      summary: "AI detected wrinkle depth: 76% confidence",
+      satisfaction: "-",
+      treatments: "-",
+      revenue: "-"
     },
     {
-      before: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      after: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      title: "Hyperpigmentation Correction",
-      summary: "91% reduction in dark spots",
-      satisfaction: "4.9/5", 
-      treatments: 7,
-      revenue: "$1,834"
+      before: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      after: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Fine Lines Detection",
+      summary: "AI detected fine lines: 79% confidence",
+      satisfaction: "-",
+      treatments: "-",
+      revenue: "-"
     },
     {
-      before: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      after: "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      title: "Pore Refinement Program",
-      summary: "68% pore size reduction",
-      satisfaction: "4.7/5",
-      treatments: 5,
-      revenue: "$987"
+      before: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      after: "https://images.unsplash.com/photo-1519340333755-c1aa5571fd46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Dark Spots Detection",
+      summary: "AI detected pigmentation: 88% confidence",
+      satisfaction: "-",
+      treatments: "-",
+      revenue: "-"
+    },
+    {
+      before: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      after: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Oiliness Assessment",
+      summary: "AI detected excess oil: 69% confidence",
+      satisfaction: "-",
+      treatments: "-",
+      revenue: "-"
+    },
+    {
+      before: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      after: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Glow Index",
+      summary: "AI glow score: 7.2/10",
+      satisfaction: "-",
+      treatments: "-",
+      revenue: "-"
     }
   ];
 

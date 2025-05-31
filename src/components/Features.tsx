@@ -7,21 +7,21 @@ const Features = () => {
       icon: Eye,
       title: "Advanced AI Detection",
       subtitle: "Show What's Barely Visible",
-      description: "Our cutting-edge AI reveals microscopic skin issues, early aging signs, and hidden damage that creates instant trust and necessity for your services.",
+      description: "Our cutting-edge AI reveals aesthetic scores, early aging signs, and hidden damage that creates instant trust and necessity for your services.",
       stats: "Detects issues invisible to naked eye"
     },
     {
       icon: TrendingUp,
       title: "Customer Retention Loop", 
       subtitle: "Create Lifelong Clients",
-      description: "Transform one-time visitors into loyal customers who book regular appointments because they can see their skin improvement journey.",
+      description: "Hook one time visitors to make them forever customers  who book regular appointments because they can see their skin improvement journey.",
       stats: "Clients book upto 3x more follow-up sessions"
     },
     {
       icon: BarChart3,
       title: "Progress Tracking System",
       subtitle: "Visual Proof of Results",
-      description: "Clients become emotionally invested when they see measurable improvements. Creates addiction to progress and regular bookings.",
+      description: "Clients become emotionally invested when they see measurable improvements in factors like skin score. Creates addiction to progress and regular bookings.",
       stats: "Upto 94% clients return within 30 days"
     },
     {
@@ -35,15 +35,15 @@ const Features = () => {
       icon: Crown,
       title: "Professional Credibility",
       subtitle: "Technology-Powered Expertise", 
-      description: "Position yourself as the most advanced salon in your area. AI technology elevates your professional image and justifies premium pricing.",
+      description: "Position yourself as the leader of salon in the AI industry . AI technology elevates your professional image and justifies premium pricing.",
       stats: "Increase service value perception by upto 60%"
     
     },
     {
       icon: Repeat,
       title: "Automated Follow-ups",
-      subtitle: "Never Lose a Client",
-      description: "AI predicts optimal treatment schedules for your clients like when it's the time for their next session based on skin improvement patterns.",
+      subtitle: "Make your Client come back again",
+      description: "AI predicts optimal treatment schedules for your clients like when it's the time for their next session based on skin improvement patterns using predictive machine learning.",
       stats: "Reduce client churn by 80%"
     }
   ];
@@ -94,10 +94,10 @@ const Features = () => {
         <div className="mt-16 text-center">
           <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-serif font-bold mb-4 text-navy-50">
-              Why Salons Choose Our AI Technology
+              Why should you choose us:
             </h3>
             <p className="text-navy-300 text-lg leading-relaxed">
-              We're one of the first to bring advanced AI skin analysis to salons. Show your clients what they can't see, 
+              We're one of the first to bring advanced AI skin analysis exclusively to salons. Show your clients the issues what they themselves can't see and comprehend, 
               create trust through technology, and build customer lifetime value that transforms your business.
             </p>
           </div>

@@ -12,7 +12,6 @@ const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: Naviga
   const [mobileOpen, setMobileOpen] = useState(false);
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'features', label: 'Features' },
     { id: 'results', label: 'Results' },
     { id: 'partner', label: 'Partner' },
     { id: 'faq', label: 'FAQ' },
@@ -31,7 +30,7 @@ const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: Naviga
           {navItems.map((item) => (
             <button
               key={item.id}
-              // onClick={() => onTabChange(item.id)}
+              onClick={() => onTabChange(item.id)}
               className={`font-medium transition-colors ${
                 activeTab === item.id 
                   ? 'text-coral-400' 
@@ -54,14 +53,14 @@ const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: Naviga
       {/* Right: Try Demo & Client Portal */}
       <div className="flex items-center space-x-4">
         <button
-          // onClick={() => onTabChange('demo')}
+          onClick={() => onTabChange('demo')}
           className="font-medium flex items-center space-x-2 transition-colors"
         >
           <BarChart3 className="h-5 w-5" />
           <span>Try Demo</span>
         </button>
         <button
-          // onClick={onShowPortal}
+          onClick={onShowPortal}
           className="btn-secondary flex items-center space-x-2"
         >
           <Users className="h-5 w-5" />
@@ -82,7 +81,7 @@ const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: Naviga
             {navItems.map((item) => (
               <button
                 key={item.id}
-                // onClick={() => { onTabChange(item.id); setMobileOpen(false); }}
+                onClick={() => { onTabChange(item.id); setMobileOpen(false); }}
                 className={`text-2xl font-bold transition-colors w-full text-center ${
                   activeTab === item.id
                     ? 'text-coral-400'
