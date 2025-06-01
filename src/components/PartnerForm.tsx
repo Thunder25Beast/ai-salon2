@@ -118,7 +118,7 @@ const PartnerForm = () => {
             <div className="mt-8 p-6 bg-coral-500/10 rounded-2xl border border-coral-500/20">
               <div className="text-coral-400 font-semibold mb-2">Limited Time Offer:</div>
               <div className="text-navy-50 text-lg">
-                First 100 partners get <span className="font-bold">6 months free</span> implementation support
+                First 10 partners get <span className="font-bold">2 months free</span> implementation support
               </div>
             </div>
           </div>
