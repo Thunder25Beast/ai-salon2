@@ -141,7 +141,7 @@ const Testimonials = () => {
             <div className="text-center p-4 glass-effect rounded-2xl">
               <Shield className="h-12 w-12 text-coral-400 mx-auto mb-3" />
               <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">85% Accuracy</h3>
-              <p className="text-navy-300">AI-powered skin analysis with clinical-grade precision</p>
+              <p className="text-navy-300">AI-powered skin analysis with upto 85% precision curated and verified by skin specialists</p>
             </div>
             
             <div className="text-center p-4 glass-effect rounded-2xl">

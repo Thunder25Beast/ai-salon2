@@ -33,13 +33,13 @@ const Hero = ({ onShowDemo }: HeroProps) => {
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
             Know Their Skin
-            <span className="gradient-text block">Better Than They Do</span>
+            <span className="gradient-text block pb-2">Better Than They Do</span>
           </h1>
           <p className="text-xl md:text-2xl text-navy-200 max-w-4xl mx-auto leading-relaxed font-light">
             Show them what no one else can see and they will never leave your chair. <br/>
-            Our advanced AI elevates every consultation into a new transformative experience <span className="text-coral-400 font-semibold"> with zero hardware installation </span>  that creates
-            <span className="text-coral-400 font-semibold"> lifelong customer loyalty </span>
-            and can increase your revenue   <span className="text-coral-400 font-semibold">by 150% </span> 
+            With <span className="text-coral-400 font-semibold"> with zero hardware installation </span>, our AI skin analysis turns every appointment into a show-stopping consultation that <span className="text-coral-400 font-semibold">hooks customers for a lifetime </span>
+           
+            and can increase your revenue <span className="text-coral-400 font-semibold">by 150% </span> 
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
@@ -81,7 +81,7 @@ const Hero = ({ onShowDemo }: HeroProps) => {
               Customer Lifetime Value
             </h3>
             <p className="text-navy-300 leading-relaxed">
-              Clients book upto 3x more sessions when they see their skin analysis on an AI App. They become invested in their journey.
+              Clients are expected to book upto 3x more sessions when they see their skin treatment analysis and get reminders for next on an AI App. They become invested in their journey.
             </p>
             {/* <div className="text-coral-400 font-semibold mt-4">
               - Early Partner Salon
@@ -95,7 +95,7 @@ const Hero = ({ onShowDemo }: HeroProps) => {
               Trust Through Technology
             </h3>
             <p className="text-navy-300 leading-relaxed">
-              The AI makes you look like an expert. Clients trust your recommendations completely now.
+              The AI makes you look like an expert. Clients trust your skincare treatment recommendations completely now.
             </p>
             {/* <div className="text-coral-400 font-semibold mt-4">
               - Beta Testing Salon
