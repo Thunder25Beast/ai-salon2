@@ -23,6 +23,7 @@ const PartnerForm = () => {
     preferredStartDate: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [backendStatus, setBackendStatus] = useState<string | null>(null);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -43,7 +44,7 @@ const PartnerForm = () => {
       gstin: formData.gstin
     };
     try {
-      await fetch('https://e908-2409-40e0-d-a8d9-d964-7448-26cb-a62a.ngrok-free.app/api/leads', {
+      await fetch('https://dcef-2409-40e0-d-a8d9-d964-7448-26cb-a62a.ngrok-free.app/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -59,6 +60,19 @@ const PartnerForm = () => {
         description: "There was a problem submitting your request. Please try again later.",
         variant: "destructive"
       });
+    }
+  };
+
+  const testBackend = async () => {
+    try {
+      const res = await fetch('https://e908-2409-40e0-d-a8d9-d964-7448-26cb-a62a.ngrok-free.app/api/leads');
+      if (res.ok) {
+        setBackendStatus('Backend is reachable');
+      } else {
+        setBackendStatus('Backend responded with error: ' + res.status);
+      }
+    } catch (err) {
+      setBackendStatus('Could not reach backend.');
     }
   };
 
@@ -350,6 +364,19 @@ const PartnerForm = () => {
                     />
                   </div>
                 </div>
+              </div>
+
+              <div className="mb-8 flex justify-center">
+                <button
+                  type="button"
+                  className="btn-secondary px-4 py-2 rounded-lg text-base"
+                  onClick={testBackend}
+                >
+                  Test Backend Connectivity
+                </button>
+                {backendStatus && (
+                  <span className="ml-4 text-coral-400 font-semibold">{backendStatus}</span>
+                )}
               </div>
 
               <button
