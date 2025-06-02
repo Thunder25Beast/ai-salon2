@@ -6,7 +6,7 @@ const PartnerForm = () => {
   const [formData, setFormData] = useState({
     // Salon Information
     salonName: '',
-    numberOfBranches: '',
+    BranchID: '',
     city: '',
     avgMonthlyFootfall: '',
     clientType: '',
@@ -31,7 +31,7 @@ const PartnerForm = () => {
     const payload = {
       source: "website",
       salonName: formData.salonName,
-      branchNumber: formData.numberOfBranches,
+      branchNumber: formData.BranchID,
       city: formData.city,
       avgMonthlyFootfall: Number(formData.avgMonthlyFootfall) || 0,
       clientType: formData.clientType,
@@ -43,7 +43,7 @@ const PartnerForm = () => {
       gstin: formData.gstin
     };
     try {
-      await fetch('https://example.com/api/leads', {
+      await fetch('https://e908-2409-40e0-d-a8d9-d964-7448-26cb-a62a.ngrok-free.app/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -173,21 +173,15 @@ const PartnerForm = () => {
 
                   <div>
                     <label className="block text-navy-200 font-medium mb-2">
-                      Number of Branches *
+                      Branch ID/Number
                     </label>
-                    <select
-                      required
-                      value={formData.numberOfBranches}
-                      onChange={(e) => setFormData({...formData, numberOfBranches: e.target.value})}
+                    <input
+                      type="text"
+                      value={formData.BranchID}
+                      onChange={(e) => setFormData({...formData, BranchID: e.target.value})}
                       className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
-                    >
-                      <option value="">Select branches</option>
-                      <option value="1">1 Branch</option>
-                      <option value="2-5">2-5 Branches</option>
-                      <option value="6-10">6-10 Branches</option>
-                      <option value="11-20">11-20 Branches</option>
-                      <option value="20+">20+ Branches</option>
-                    </select>
+                      placeholder="Enter branch ID or number (if applicable)"
+                    />
                   </div>
 
                   <div>
@@ -208,19 +202,15 @@ const PartnerForm = () => {
                     <label className="block text-navy-200 font-medium mb-2">
                       Avg Monthly Footfall *
                     </label>
-                    <select
+                    <input
+                      type="number"
                       required
+                      min={0}
                       value={formData.avgMonthlyFootfall}
                       onChange={(e) => setFormData({...formData, avgMonthlyFootfall: e.target.value})}
                       className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
-                    >
-                      <option value="">Select footfall</option>
-                      <option value="under-100">Under 100 clients</option>
-                      <option value="100-300">100-300 clients</option>
-                      <option value="300-500">300-500 clients</option>
-                      <option value="500-1000">500-1000 clients</option>
-                      <option value="1000+">1000+ clients</option>
-                    </select>
+                      placeholder="Enter average monthly footfall"
+                    />
                   </div>
 
                   <div className="md:col-span-2">
