@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Send, CheckCircle, TrendingUp, Users, Zap } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
@@ -26,31 +25,58 @@ const PartnerForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Partner form submitted:', formData);
-    setIsSubmitted(true);
-    toast({
-      title: "Partnership Request Submitted!",
-      description: "We'll contact you within 24 hours to discuss your revenue transformation.",
-    });
+    // Prepare payload for backend
+    const payload = {
+      source: "website",
+      salonName: formData.salonName,
+      branchNumber: formData.numberOfBranches,
+      city: formData.city,
+      avgMonthlyFootfall: Number(formData.avgMonthlyFootfall) || 0,
+      clientType: formData.clientType,
+      contactName: formData.contactName,
+      contactEmail: formData.email,
+      contactPhone: formData.phone,
+      contactDesignation: formData.designation,
+      businessType: formData.businessType,
+      gstin: formData.gstin
+    };
+    try {
+      await fetch('https://example.com/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      setIsSubmitted(true);
+      toast({
+        title: "Partnership Request Submitted!",
+        description: "We'll contact you within 24 hours to discuss your revenue transformation.",
+      });
+    } catch (err) {
+      toast({
+        title: "Submission Failed",
+        description: "There was a problem submitting your request. Please try again later.",
+        variant: "destructive"
+      });
+    }
   };
 
   const benefits = [
     {
       icon: TrendingUp,
-      title: "Upto 150% Revenue Boost Guarantee",
-      description: "Or we work for free until you hit targets"
+      title: "Upto 150% Revenue Boost Potential",
+      description: "Leverage AI-driven insights to elevate your salon’s earning capacity"
     },
     {
       icon: Users,
       title: "90-Day Client Retention Goal",
-      description: "Comprehensive training and support included"
+      description: "Clients get automatic notifications for follow-ups, helping you build consistent return visits."
     },
     {
       icon: Zap,
-      title: "Same-Day Implementation",
-      description: "Start converting clients immediately"
+      title: "Implementation whenever you say",
+      description: "We’ll implement the system on your preferred date, no pressure, just your timeline."
     }
   ];
 
@@ -84,7 +110,7 @@ const PartnerForm = () => {
             <span className="gradient-text"> Your Salon?</span>
           </h2>
           <p className="text-xl text-navy-300 max-w-3xl mx-auto">
-            Join the first wave of salons boosting their revenue by up to 150% with our AI system.
+              Be among the first salons onboarding our AI system to boost revenue by up to 150%.
           </p>
         </div>
 
@@ -118,7 +144,7 @@ const PartnerForm = () => {
             <div className="mt-8 p-6 bg-coral-500/10 rounded-2xl border border-coral-500/20">
               <div className="text-coral-400 font-semibold mb-2">Limited Time Offer:</div>
               <div className="text-navy-50 text-lg">
-                First 10 partners get <span className="font-bold">2 months free</span> implementation support
+                First 10 partners get <span className="font-bold">1 month free</span> implementation support
               </div>
             </div>
           </div>

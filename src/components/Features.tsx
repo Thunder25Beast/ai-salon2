@@ -21,14 +21,14 @@ const Features = () => {
       icon: BarChart3,
       title: "Progress Tracking System",
       subtitle: "Visual Proof of Results",
-      description: "Clients become emotionally invested when they see measurable improvements in factors like skin score. Creates addiction to progress and regular bookings.",
+      description: "Clients become emotionally invested when they see measurable improvements in factors like skin score. Hooks clients with visible results, compelling them to book session after session.",
       stats: "30 - 40 % expected client returns"
     },
     {
       icon: Zap,
       title: "Instant Analysis",
       subtitle: "Real-Time Skin Scoring",
-      description: "Receive detailed skin health insights in seconds. Our AI's clinical-grade accuracy transforms every consultation into an engaging, trust-building experience.",
+      description: "Receive detailed skin health insights in seconds. Our AI's beautician verified accuracy transforms every consultation into an engaging, trust-building experience.",
       stats: "Complete analysis in under 5-10 seconds"
     },
     // {
@@ -44,8 +44,8 @@ const Features = () => {
       icon: Crown,
       title: "Revenue Accelerator",
       subtitle: "Data-Driven Upselling",
-      description: "Leverage our AI insights to recommend premium services, turning every consultation into a profitable opportunity and increasing your customer base by up to 150%.",
-      stats: "Boost clientele by upto 150%"
+      description: "Leverage our AI insights to recommend premium services, turning every consultation into a profitable opportunity and increasing your revenue by up to 150%.",
+      stats: "Drive up to 150% more revenue for your salon."
 
 
     },
@@ -54,7 +54,7 @@ const Features = () => {
       title: "Automated Follow-ups",
       subtitle: "Make your Client come back again",
       description: "AI predicts optimal treatment schedules for your clients like when it's the time for their next session based on skin improvement patterns using predictive machine learning.",
-      stats: "Reduce client churn by 80%"
+      stats: "Keep 80% of clients coming back."
     }
   ];
 
@@ -102,28 +102,34 @@ const Features = () => {
         </div>
 
         <div className="mt-16">
-  <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
-    <h3 className="text-3xl font-serif  text-center font-bold mb-6 text-navy-50">
-      Why should you choose us:
+  <div className="bg-gradient-to-br from-coral-500/20 via-navy-900/90 to-coral-400/10 border border-coral-400/30 shadow-xl rounded-3xl p-10 max-w-4xl mx-auto flex flex-col items-center animate-fade-in">
+    <h3 className="text-3xl font-serif text-center font-bold mb-6 text-coral-400 drop-shadow-lg">
+      <span className="inline-block bg-navy-950/80 px-4 py-2 rounded-xl shadow text-coral-400">Why should you choose us?</span>
     </h3>
-    <ul className="text-navy-300 text-xl leading-relaxed list-disc list-inside space-y-3">
-      <li>
-        We're one of the first to bring advanced AI skin analysis exclusively to salons, no one else offers this level of insight.
+    <ul className="text-navy-100 text-lg md:text-xl leading-relaxed list-none w-full space-y-5">
+      <li className="flex items-start gap-3">
+        <span className="mt-1 text-coral-400">★</span>
+        <span>We're one of the first to bring <span className="text-coral-400 font-semibold">advanced AI skin analysis</span> exclusively to salons, no one else offers this level of insight.</span>
       </li>
-      <li>
-        Show your clients issues they can't see themselves, creating instant trust through cutting-edge technology.
+      <li className="flex items-start gap-3">
+        <span className="mt-1 text-coral-400">★</span>
+        <span>Show your clients issues they can't see themselves, creating <span className="text-coral-400 font-semibold">instant trust</span> through cutting-edge technology.</span>
       </li>
-      <li>
-        Build customer lifetime value by turning every appointment into an engaging, evidence-driven experience.
+      <li className="flex items-start gap-3">
+        <span className="mt-1 text-coral-400">★</span>
+        <span>Build <span className="text-coral-400 font-semibold">customer lifetime value</span> by turning every appointment into an engaging, evidence-driven experience.</span>
       </li>
-      <li>
-        Elevate your professional credibility with AI-powered expertise that sets you apart from competitors.
+      <li className="flex items-start gap-3">
+        <span className="mt-1 text-coral-400">★</span>
+        <span>Elevate your professional credibility with <span className="text-coral-400 font-semibold">AI-powered expertise</span> that sets you apart from competitors.</span>
       </li>
-      <li>
-        Transform your business revenue, clients book by upto 3x more follow-ups when they see real improvement over time.
+      <li className="flex items-start gap-3">
+        <span className="mt-1 text-coral-400">★</span>
+        <span>Transform your business revenue, each client spends <span className="text-coral-400 font-semibold">150% more</span> and books up to <span className="text-coral-400 font-semibold">3× more follow-up sessions</span> when they see real improvement over time.</span>
       </li>
-      <li>
-        Hook customers for a lifetime by offering personalized treatment plans backed by predictive AI insights.
+      <li className="flex items-start gap-3">
+        <span className="mt-1 text-coral-400">★</span>
+        <span>Hook customers for a lifetime by offering <span className="text-coral-400 font-semibold">personalized treatment plans</span> backed by predictive AI insights.</span>
       </li>
     </ul>
   </div>
