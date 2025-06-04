@@ -28,6 +28,16 @@ const PartnerForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Phone number validation
+    const phone = formData.phone.replace(/\D/g, '');
+    if (phone.length !== 10) {
+      toast({
+        title: "Invalid Phone Number",
+        description: "Phone number must be exactly 10 digits.",
+        variant: "destructive"
+      });
+      return;
+    }
     // Prepare payload for backend
     const payload = {
       source: "website",
@@ -307,10 +317,17 @@ const PartnerForm = () => {
                       type="tel"
                       required
                       value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
-                      placeholder="+91 98765 43210"
+                      onChange={(e) => {
+                        const value = e.target.value.replace(/\D/g, '');
+                        if (value.length > 10) return;
+                        setFormData({ ...formData, phone: value });
+                      }}
+                      className={`w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors ${formData.phone && formData.phone.length !== 10 ? 'border-red-500' : ''}`}
+                      placeholder="9876543210"
                     />
+                    {formData.phone && formData.phone.length !== 10 && (
+                      <span className="text-red-500 text-sm mt-1 block">Phone number must be exactly 10 digits.</span>
+                    )}
                   </div>
                 </div>
               </div>
