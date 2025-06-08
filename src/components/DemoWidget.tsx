@@ -1,6 +1,13 @@
-
 import React, { useState } from 'react';
 import { X, Upload, Camera, Zap, TrendingUp, Target, Download } from 'lucide-react';
+import * as tf from '@tensorflow/tfjs';
+import {
+  createDetector,
+  SupportedModels,
+  FaceLandmarksDetector
+} from '@tensorflow-models/face-landmarks-detection';
+import '@tensorflow/tfjs-backend-webgl';
+import '@tensorflow/tfjs-backend-cpu';
 
 interface DemoWidgetProps {
   onClose: () => void;
@@ -11,6 +18,165 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [analysisResults, setAnalysisResults] = useState<any>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [cameraActive, setCameraActive] = useState(false);
+  const [canCapture, setCanCapture] = useState(false);
+  const [borderColor, setBorderColor] = useState<'red' | 'green'>('red');
+  const [cameraError, setCameraError] = useState<string | null>(null);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const canvasRef = React.useRef<HTMLCanvasElement>(null);
+  const [detector, setDetector] = useState<FaceLandmarksDetector | null>(null);
+
+  // Ensure TensorFlow.js backend is set and ready before any model usage
+  React.useEffect(() => {
+    (async () => {
+      try {
+        await tf.setBackend('webgl');
+      } catch {
+        await tf.setBackend('cpu');
+      }
+      await tf.ready();
+    })();
+  }, []);
+
+  // Load FaceMesh detector
+  React.useEffect(() => {
+    if (cameraActive && !detector) {
+      createDetector(SupportedModels.MediaPipeFaceMesh, {
+        runtime: 'tfjs',
+        maxFaces: 1,
+        refineLandmarks: true
+      }).then(setDetector);
+    }
+  }, [cameraActive, detector]);
+
+  // Camera stream and analysis
+  React.useEffect(() => {
+    let stream: MediaStream;
+    let animationId: number;
+    const analyzeFrame = async () => {
+      if (!videoRef.current || !canvasRef.current || !detector) return;
+      // Ensure video and canvas have valid, non-zero dimensions
+      const video = videoRef.current;
+      const canvas = canvasRef.current;
+      if (video.videoWidth === 0 || video.videoHeight === 0) {
+        animationId = requestAnimationFrame(analyzeFrame);
+        return;
+      }
+      // Always sync canvas size to video size
+      if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+      }
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      if (!ctx) {
+        animationId = requestAnimationFrame(analyzeFrame);
+        return;
+      }
+      const width = canvas.width;
+      const height = canvas.height;
+      if (width === 0 || height === 0) {
+        animationId = requestAnimationFrame(analyzeFrame);
+        return;
+      }
+      ctx.clearRect(0, 0, width, height);
+      ctx.drawImage(video, 0, 0, width, height);
+      const frame = ctx.getImageData(0, 0, width, height);
+      let total = 0;
+      for (let i = 0; i < frame.data.length; i += 4) {
+        total += 0.299 * frame.data[i] + 0.587 * frame.data[i+1] + 0.114 * frame.data[i+2];
+      }
+      const avgBrightness = total / (frame.data.length / 4) / 255 * 100;
+      const predictions = await detector.estimateFaces(video);
+      let roll = 0;
+      let faceOk = false;
+      // Draw face mesh if detected
+      if (predictions.length > 0 && predictions[0].keypoints && predictions[0].keypoints.length > 0) {
+        // Draw mesh points
+        ctx.save();
+        ctx.fillStyle = '#22c55e';
+        predictions[0].keypoints.forEach((pt) => {
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, 2, 0, 2 * Math.PI);
+          ctx.fill();
+        });
+        ctx.restore();
+        // Log box and keypoints to console
+        if (predictions[0].box) {
+          console.log('box:', predictions[0].box);
+        }
+        console.log('keypoints:', predictions[0].keypoints);
+        // Use nose as fallback for roll if eyes not found
+        const leftEye = predictions[0].keypoints.find(k => k.name === 'leftEye');
+        const rightEye = predictions[0].keypoints.find(k => k.name === 'rightEye');
+        const nose = predictions[0].keypoints.find(k => k.name === 'noseTip' || k.name === 'nose');
+        if (leftEye && rightEye) {
+          roll = Math.atan2(leftEye.y - rightEye.y, leftEye.x - rightEye.x) * (180/Math.PI);
+        } else if (nose) {
+          roll = 0; // fallback: treat as straight
+        }
+        if (Math.abs(roll) < 10 && avgBrightness > 30 && avgBrightness < 70) {
+          setBorderColor('green');
+          setCanCapture(true);
+          faceOk = true;
+        } else {
+          setBorderColor('red');
+          setCanCapture(false);
+        }
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = faceOk ? '#22c55e' : '#ef4444';
+        ctx.strokeRect(0, 0, width, height);
+        ctx.font = '20px sans-serif';
+        ctx.fillStyle = faceOk ? '#22c55e' : '#ef4444';
+        ctx.textAlign = 'center';
+        if (Math.abs(roll) >= 10) {
+          ctx.fillText(roll > 0 ? 'Turn head right' : 'Turn head left', width/2, 40);
+        } else if (avgBrightness <= 30) {
+          ctx.fillText('Increase lighting', width/2, 40);
+        } else if (avgBrightness >= 70) {
+          ctx.fillText('Reduce lighting', width/2, 40);
+        } else if (faceOk) {
+          ctx.fillText('Perfect! Click to capture.', width/2, 40);
+        }
+      } else {
+        setBorderColor('red');
+        setCanCapture(false);
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = '#ef4444';
+        ctx.strokeRect(0, 0, width, height);
+        ctx.font = '20px sans-serif';
+        ctx.fillStyle = '#ef4444';
+        ctx.textAlign = 'center';
+        ctx.fillText('Face not detected', width/2, 40);
+      }
+      animationId = requestAnimationFrame(analyzeFrame);
+    };
+    if (cameraActive && videoRef.current && canvasRef.current && detector) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then((s) => {
+          stream = s;
+          videoRef.current!.srcObject = stream;
+          videoRef.current!.play();
+          videoRef.current!.onloadedmetadata = () => {
+            canvasRef.current!.width = videoRef.current!.videoWidth;
+            canvasRef.current!.height = videoRef.current!.videoHeight;
+            animationId = requestAnimationFrame(analyzeFrame);
+          };
+        })
+        .catch(() => setCameraError('Could not access camera.'));
+    }
+    return () => {
+      if (stream) stream.getTracks().forEach((t) => t.stop());
+      if (animationId) cancelAnimationFrame(animationId);
+    };
+  }, [cameraActive, detector]);
+
+  const handleCapture = () => {
+    if (!canCapture || !canvasRef.current) return;
+    const dataUrl = canvasRef.current.toDataURL('image/jpeg');
+    setSelectedImage(dataUrl);
+    setCameraActive(false);
+    setAnalysisResults(null);
+  };
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -133,25 +299,35 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
                       </div>
                     </div>
                   ) : (
-                    <label className="cursor-pointer">
-                      <Camera className="h-16 w-16 text-navy-400 mx-auto mb-4" />
-                      <div className="text-navy-200 font-medium mb-2">
-                        Upload a photo to analyze
-                      </div>
-                      <div className="text-navy-400 text-sm mb-4">
-                        JPG, PNG or GIF up to 10MB
-                      </div>
-                      <div className="btn-primary inline-flex items-center space-x-2">
-                        <Upload className="h-4 w-4" />
-                        <span>Choose Photo</span>
-                      </div>
-                      <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageUpload}
-                        className="hidden"
-                      />
-                    </label>
+                    <>
+                      <label className="cursor-pointer">
+                        <Camera className="h-16 w-16 text-navy-400 mx-auto mb-4" />
+                        <div className="text-navy-200 font-medium mb-2">
+                          Upload a photo to analyze
+                        </div>
+                        <div className="text-navy-400 text-sm mb-4">
+                          JPG, PNG or GIF up to 10MB
+                        </div>
+                        <div className="btn-primary inline-flex items-center space-x-2">
+                          <Upload className="h-4 w-4" />
+                          <span>Choose Photo</span>
+                        </div>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleImageUpload}
+                          className="hidden"
+                        />
+                      </label>
+                      <button
+                        className="btn-secondary flex items-center space-x-2 mt-4 mx-auto"
+                        onClick={() => setCameraActive(true)}
+                        type="button"
+                      >
+                        <Camera className="h-4 w-4" />
+                        <span>Capture Photo</span>
+                      </button>
+                    </>
                   )}
                 </div>
               </div>
@@ -284,6 +460,51 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
             </div>
           )}
         </div>
+
+        {cameraActive && (
+          <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+            <div className="bg-navy-900 rounded-2xl w-full max-w-3xl p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-semibold text-navy-50">
+                  Capture Client Photo
+                </h3>
+                <button 
+                  onClick={() => setCameraActive(false)}
+                  className="p-2 hover:bg-navy-800 rounded-xl transition-colors"
+                >
+                  <X className="h-6 w-6 text-navy-400" />
+                </button>
+              </div>
+
+              <div className="relative" style={{ border: `6px solid ${borderColor === 'green' ? '#22c55e' : '#ef4444'}`, borderRadius: '0.75rem', transition: 'border-color 0.3s' }}>
+                <video ref={videoRef} className="rounded-lg w-full" autoPlay muted playsInline style={{ display: 'block' }} />
+                <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full pointer-events-none" />
+                {cameraError && <div className="text-red-500 mt-2">{cameraError}</div>}
+              </div>
+              <div className="flex justify-center mt-4 space-x-4">
+                <button
+                  className={`btn-primary flex items-center space-x-2 ${canCapture ? 'bg-green-500 hover:bg-green-600' : 'bg-red-500/80 cursor-not-allowed'}`}
+                  onClick={handleCapture}
+                  disabled={!canCapture}
+                >
+                  <Camera className="h-5 w-5" />
+                  <span>{canCapture ? 'Click to Capture' : 'Align Face & Lighting'}</span>
+                </button>
+                <button
+                  className="btn-secondary flex items-center space-x-2"
+                  onClick={() => setCameraActive(false)}
+                >
+                  <X className="h-5 w-5" />
+                  <span>Cancel</span>
+                </button>
+              </div>
+
+              <div className="mt-4 text-center text-navy-400 text-sm">
+                {borderColor === 'green' ? 'Face is well aligned!' : 'Please adjust your position.'}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
