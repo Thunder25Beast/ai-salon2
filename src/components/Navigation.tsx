@@ -1,22 +1,18 @@
 import React, { useState } from 'react';
 import { Sparkles, Users, BarChart3, Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface NavigationProps {
-  onShowDemo: () => void;
-  onShowPortal: () => void;
-  activeTab: string;
-  onTabChange: (tab: string) => void;
-}
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/results', label: 'Results' },
+  { to: '/partner', label: 'Partner' },
+  { to: '/faq', label: 'FAQ' },
+  { to: '/contact', label: 'Contact' },
+  { to: '/demo', label: 'Try Demo', icon: <BarChart3 className="h-5 w-5" /> },
+];
 
-const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: NavigationProps) => {
+const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'results', label: 'Results' },
-    { id: 'partner', label: 'Partner' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'contact', label: 'Contact' }
-  ];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-navy-950/80 border-b border-navy-800/80 flex items-center justify-between py-4 px-6 backdrop-blur-md">
@@ -27,18 +23,14 @@ const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: Naviga
         </div>
         {/* Desktop nav */}
         <div className="hidden md:flex items-center space-x-4">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => onTabChange(item.id)}
-              className={`font-medium transition-colors ${
-                activeTab === item.id 
-                  ? 'text-coral-400' 
-                  : 'text-navy-200 hover:text-coral-400'
-              }`}
+          {navLinks.slice(0, 5).map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className="font-medium transition-colors text-navy-200 hover:text-coral-400"
             >
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
         {/* Hamburger for mobile */}
@@ -52,20 +44,20 @@ const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: Naviga
       </div>
       {/* Right: Try Demo & Client Portal */}
       <div className="flex items-center space-x-4">
-        <button
-          onClick={() => onTabChange('demo')}
-          className="font-medium flex items-center space-x-2 transition-colors"
+        <Link
+          to="/demo"
+          className="font-medium flex items-center space-x-2 transition-colors text-navy-200 hover:text-coral-400"
         >
           <BarChart3 className="h-5 w-5" />
           <span>Try Demo</span>
-        </button>
-        <button
-          onClick={onShowPortal}
+        </Link>
+        <Link
+          to="/portal"
           className="btn-secondary flex items-center space-x-2"
         >
           <Users className="h-5 w-5" />
           <span>Client Portal</span>
-        </button>
+        </Link>
       </div>
       {/* Mobile menu overlay */}
       {mobileOpen && (
@@ -78,19 +70,24 @@ const Navigation = ({ onShowDemo, onShowPortal, activeTab, onTabChange }: Naviga
             ×
           </button>
           <div className="flex flex-col bg-navy-950/95 space-y-8 mt-80 w-full items-center">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => { onTabChange(item.id); setMobileOpen(false); }}
-                className={`text-2xl font-bold transition-colors w-full text-center ${
-                  activeTab === item.id
-                    ? 'text-coral-400'
-                    : 'text-navy-200 hover:text-coral-400'
-                }`}
+            {navLinks.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="text-2xl font-bold transition-colors w-full text-center text-navy-200 hover:text-coral-400"
+                onClick={() => setMobileOpen(false)}
               >
+                {item.icon}
                 {item.label}
-              </button>
+              </Link>
             ))}
+            <Link
+              to="/portal"
+              className="text-2xl font-bold transition-colors w-full text-center text-navy-200 hover:text-coral-400"
+              onClick={() => setMobileOpen(false)}
+            >
+              Client Portal
+            </Link>
           </div>
         </div>
       )}
