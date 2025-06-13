@@ -75,7 +75,7 @@ const PartnerForm = () => {
 
   const testBackend = async () => {
     try {
-      const res = await fetch('https://e908-2409-40e0-d-a8d9-d964-7448-26cb-a62a.ngrok-free.app/api/leads');
+      const res = await fetch('https://f74a-2409-40e0-1040-8ea4-d876-90ed-468-d2ba.ngrok-free.app/api/leads');
       if (res.ok) {
         setBackendStatus('Backend is reachable');
       } else {
