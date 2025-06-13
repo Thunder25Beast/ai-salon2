@@ -15,6 +15,7 @@ import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import DemoWidget from "./components/DemoWidget";
 import Results from "./components/Gallery";
+import Redirect from "./components/Redirect";
 
 const queryClient = new QueryClient();
 
@@ -35,8 +36,9 @@ const App = () => (
           <Route path="/contact" element={withLayout(Contact)({})} />
           <Route path="/demo" element={withLayout(() => <DemoWidget isModal={false} onClose={() => {}} />)({})} />
           <Route path="/results" element={withLayout(Results)({})} />
+          <Route path="/redirect" element={withLayout(Redirect)({})} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={withLayout(NotFound)({})} />
+          <Route path="*" element={withLayout(Redirect)({ to: "/" })} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
