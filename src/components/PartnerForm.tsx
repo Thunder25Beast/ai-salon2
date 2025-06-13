@@ -57,7 +57,7 @@ const PartnerForm = () => {
       const username = "admin";
       const password = "eagle123";
       const credentials = btoa(`${username}:${password}`);
-      await fetch('https://dcef-2409-40e0-d-a8d9-d964-7448-26cb-a62a.ngrok-free.app/api/leads', {
+      await fetch('https://f74a-2409-40e0-1040-8ea4-d876-90ed-468-d2ba.ngrok-free.app/api/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
