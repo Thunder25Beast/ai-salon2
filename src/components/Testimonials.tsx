@@ -166,7 +166,7 @@ const Testimonials = () => {
         <p className="text-xl text-navy-300 max-w-3xl mx-auto text-center mb-10">
           The visionaries behind EagleVerse AI, blending deep tech, clinical expertise, and a passion for beauty innovation.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto justify-items-center">
           {/* Founder 1 */}
           <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Founder 1" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
@@ -176,8 +176,8 @@ const Testimonials = () => {
           </div>
           {/* Founder 2 */}
           <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Founder 2" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
-            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Priya Sharma</div>
+            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Founder 2" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
+            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Ashwin</div>
             <div className="text-coral-400 font-medium mb-2 text-center">COO & Product</div>
             <div className="text-navy-300 text-center text-sm">Beauty industry expert, ex-L'Oréal, ensures our AI fits real salon workflows and delights clients.</div>
           </div>
@@ -187,13 +187,6 @@ const Testimonials = () => {
             <div className="font-bold text-lg text-navy-50 mb-1 text-center">Aryamann</div>
             <div className="text-coral-400 font-medium mb-2 text-center">CTO</div>
             <div className="text-navy-300 text-center text-sm">Full-stack engineer, ex-Flipkart, builds robust, secure, and scalable AI platforms for beauty tech.</div>
-          </div>
-          {/* Founder 4 */}
-          <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Founder 4" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
-            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Simran Kaur</div>
-            <div className="text-coral-400 font-medium mb-2 text-center">Clinical Advisor</div>
-            <div className="text-navy-300 text-center text-sm">Dermatologist, 10+ years in clinical practice, ensures our AI is safe, accurate, and trusted by professionals.</div>
           </div>
         </div>
       </div>
