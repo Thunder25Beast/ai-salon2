@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Shield, Users, Award } from 'lucide-react';
-import AryamanImg from '@/assets/images/aryaman.jpeg';
+import AryamanImg from '@/assets/images/aryaman.jpg';
 import SakshamImg from '@/assets/images/Saksham.jpeg';
-import AshwinImg from '@/assets/images/Ashwin.png';
+import AshwinImg from '@/assets/images/ashwin.jpg';
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -173,22 +173,22 @@ const Testimonials = () => {
             <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
             <img src={SakshamImg} alt="Saksham" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow"  />
             <div className="font-bold text-lg text-navy-50 mb-1 text-center">Saksham Kumar</div>
-            <div className="text-coral-400 font-medium mb-2 text-center">CEO & Founder</div>
-            <div className="text-navy-300 text-center text-sm">Ex-IIT Bombay, 7+ years in AI/ML, passionate about making advanced tech accessible to salons.</div>
+            <div className="text-coral-400 font-medium mb-2 text-center">CEO</div>
+            <div className="text-navy-300 text-center text-sm"> An IIT-B EE student having experience in ML in healthcare, B2B business strategy, Team Leadership and Research Experience in B2B buyer-seller interaction in Metaverse, having passion and drive to innovate in the field of Virtual Reality and Metaverse.</div>
             </div>
           {/* Founder 2 */}
           <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
             <img src={AshwinImg} alt="Ashwin" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow"  />
-            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Ashwin</div>
-            <div className="text-coral-400 font-medium mb-2 text-center">COO & Product</div>
-            <div className="text-navy-300 text-center text-sm">Beauty industry expert, ensures our AI fits real salon workflows and delights clients.</div>
+            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Ashwin Nagarwal</div>
+            <div className="text-coral-400 font-medium mb-2 text-center">CTO</div>
+            <div className="text-navy-300 text-center text-sm">An IIT-B EE student having experience in ML projects taken under guidance of renowned Professors at IITB in the field of Med-tech and LLM used for making chatbots.</div>
           </div>
           {/* Founder 3 */}
           <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
-            <img src={AryamanImg} alt="Aryaman" alt="Founder 1" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
-            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Aryaman</div>
-            <div className="text-coral-400 font-medium mb-2 text-center">CTO</div>
-            <div className="text-navy-300 text-center text-sm">Full-stack engineer, ex-Flipkart, builds robust, secure, and scalable AI platforms for beauty tech.</div>
+            <img src={AryamanImg} alt="Aryaman"  className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
+            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Aryaman Panwar </div>
+            <div className="text-coral-400 font-medium mb-2 text-center">CFO</div>
+            <div className="text-navy-300 text-center text-sm">An IIT-B EE student having experience in ML and GEN Al, and have done Research Projects under Professor in the field of Optimization of Price and demand, and Driven to create effective market strategies through data-driven modeling.</div>
           </div>
         </div>
       </div>
