@@ -168,22 +168,22 @@ const Testimonials = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto justify-items-center">
           {/* Founder 1 */}
-          <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Founder 1" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
+            <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
+            <img src="/src/assets/images/Saksham.jpeg" alt="Founder 1" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
             <div className="font-bold text-lg text-navy-50 mb-1 text-center">Saksham Kumar</div>
             <div className="text-coral-400 font-medium mb-2 text-center">CEO & Founder</div>
             <div className="text-navy-300 text-center text-sm">Ex-IIT Bombay, 7+ years in AI/ML, passionate about making advanced tech accessible to salons.</div>
-          </div>
+            </div>
           {/* Founder 2 */}
           <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
-            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Founder 2" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
+            <img src="https://randomuser.me/api/portraits/men.jpg" alt="Founder 2" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
             <div className="font-bold text-lg text-navy-50 mb-1 text-center">Ashwin</div>
             <div className="text-coral-400 font-medium mb-2 text-center">COO & Product</div>
             <div className="text-navy-300 text-center text-sm">Beauty industry expert, ex-L'Oréal, ensures our AI fits real salon workflows and delights clients.</div>
           </div>
           {/* Founder 3 */}
           <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
-            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Founder 3" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
+            <img src="/src/assets/images/Aryaman.jpeg" alt="Founder 3" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
             <div className="font-bold text-lg text-navy-50 mb-1 text-center">Aryamann</div>
             <div className="text-coral-400 font-medium mb-2 text-center">CTO</div>
             <div className="text-navy-300 text-center text-sm">Full-stack engineer, ex-Flipkart, builds robust, secure, and scalable AI platforms for beauty tech.</div>
