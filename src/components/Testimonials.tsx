@@ -186,7 +186,7 @@ const Testimonials = () => {
           {/* Founder 3 */}
           <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
             <img src={AryamanImg} alt="Aryaman" alt="Founder 1" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
-            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Aryamann</div>
+            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Aryaman</div>
             <div className="text-coral-400 font-medium mb-2 text-center">CTO</div>
             <div className="text-navy-300 text-center text-sm">Full-stack engineer, ex-Flipkart, builds robust, secure, and scalable AI platforms for beauty tech.</div>
           </div>
