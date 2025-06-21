@@ -16,8 +16,8 @@ const Navigation = () => {
   const currentPath = location.pathname;
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 border-b border-navy-800/50 bg-navy-950 md:bg-navy-950/80 md:backdrop-blur-md md:glass-effect">
-      <div className="max-w-7xl mx-auto py-4 px-4 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 w-full z-50 border-b border-navy-800/50 bg-navy-950 lg:bg-navy-950/80 lg:backdrop-blur-md lg:glass-effect">
+      <div className="w-full py-4 px-4 lg:px-8 flex items-center justify-between">
         {/* Brand */}
         <Link to="/" className="flex items-center space-x-3">
           <div className="bg-coral-500 p-2 rounded-xl">
@@ -28,7 +28,7 @@ const Navigation = () => {
           </span>
         </Link>
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-4 lg:space-x-8">
           {navLinks.map((item) => (
             <Link
               key={item.to}
@@ -54,18 +54,18 @@ const Navigation = () => {
             <span>Try Demo</span>
           </Link>
            <a
-				href="https://salon-portal-eagleverse.netlify.app/"
-				target="_blank"
-				rel="noopener noreferrer"
-				className="btn-secondary flex items-center space-x-2"
-				onClick={() => setMobileOpen(false)}
-			  >
-				<Users className="h-5 w-5" />
-				<span>Client Portal</span>
-			  </a>
+                href="https://salon-portal-eagleverse.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary flex items-center space-x-2"
+                onClick={() => setMobileOpen(false)}
+              >
+                <Users className="h-4 w-4" />
+                <span>Client Portal</span>
+              </a>
         </div>
         {/* Mobile Navigation Trigger */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             className="text-navy-200 hover:text-coral-400 transition-colors"
             onClick={() => setMobileOpen(true)}
@@ -78,7 +78,7 @@ const Navigation = () => {
 
       {/* Mobile Menu Drawer */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
+        <div className="fixed inset-0 z-50 lg:hidden">
           {/* Overlay */}
           <div
             className="absolute inset-0 bg-black/60 animate-fade-in"
@@ -130,16 +130,16 @@ const Navigation = () => {
                 <BarChart3 className="h-5 w-5" />
                 <span>Try Demo</span>
               </Link>
-			  <a
-				href="https://salon-portal-eagleverse.netlify.app/"
-				target="_blank"
-				rel="noopener noreferrer"
-				className="mt-4 w-full py-3 px-4 bg-coral-500 text-white rounded-lg font-medium flex items-center justify-center space-x-2 hover:bg-coral-600 transition-colors text-xl"
-				onClick={() => setMobileOpen(false)}
-			  >
-				<Users className="h-5 w-5" />
-				<span>Client Portal</span>
-			  </a>
+              <a
+                href="https://salon-portal-eagleverse.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 w-full py-3 px-4 bg-coral-500 text-white rounded-lg font-medium flex items-center justify-center space-x-2 hover:bg-coral-600 transition-colors text-xl"
+                onClick={() => setMobileOpen(false)}
+              >
+                <Users className="h-5 w-5" />
+                <span>Client Portal</span>
+              </a>
             </div>
           </div>
           <style>
@@ -161,8 +161,8 @@ const Navigation = () => {
             `}
           </style>
         </div>
-	  )}
-		</nav>
+      )}
+        </nav>
   );
 };
 

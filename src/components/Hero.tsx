@@ -43,20 +43,20 @@ const Hero = ({ onShowDemo }: HeroProps) => {
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
-          <button 
-            onClick={scrollToPartner}
+            <a 
+            href="/partner"
             className="btn-primary group flex items-center space-x-3"
-          >
+            >
             <span>Start Your AI Journey</span>
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </button>
-          <button 
-            onClick={onShowDemo}
+            </a>
+          <a 
+            href = "/demo"
             className="btn-secondary group flex items-center space-x-3"
           >
             <span>See AI Analysis Demo</span>
             <Eye className="h-5 w-5" />
-          </button>
+          </a>
         </div>
         <div className="grid md:grid-cols-3 gap-8 animate-slide-up">
           <div className="text-center p-8 glass-effect rounded-2xl hover-lift">
