@@ -62,9 +62,9 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="results" className="section-padding bg-navy-950">
+    <section id="results" className="mt-10 section-padding bg-navy-950">
       <div className="container-width">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-navy-50">
             Proven Results That
             <span className="gradient-text"> Drive Revenue</span>

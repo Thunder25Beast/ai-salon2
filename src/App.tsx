@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import CustomerPortal from "./components/CustomerPortal";
+// import CustomerPortal from "./components/CustomerPortal";
 import withLayout from './components/ui/withLayout';
 import Features from "./components/Features";
 import Testimonials from "./components/Testimonials";
@@ -24,10 +24,11 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={withLayout(Index)({})} />
-          <Route path="/portal" element={withLayout(CustomerPortal)({})} />
+          {/* <Route path="/portal" element={withLayout(CustomerPortal)({})} /> */}
           <Route path="/features" element={withLayout(Features)({})} />
           <Route path="/testimonials" element={withLayout(Testimonials)({})} />
           <Route path="/partner" element={withLayout(PartnerForm)({})} />

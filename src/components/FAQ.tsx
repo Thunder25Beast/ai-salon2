@@ -45,7 +45,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="section-padding bg-navy-900">
+    <section className="mt-10 section-padding bg-navy-900">
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-navy-50">

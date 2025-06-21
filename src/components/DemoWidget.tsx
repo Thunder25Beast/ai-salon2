@@ -139,8 +139,8 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
   }, [stream]);
 
   const containerClass = isModal 
-    ? "fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-    : "w-full max-w-6xl mx-auto";
+    ? "fixed inset-0 bg-black/80 mt-20 flex items-center justify-center z-50 p-4"
+    : "w-full max-w-6xl mt-20 mx-auto";
 
   const contentClass = isModal
     ? "bg-navy-900 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto"
@@ -150,7 +150,7 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
     <div className={containerClass}>
       <div className={contentClass}>
         {isModal && (
-          <div className="p-6 border-b border-navy-800 flex justify-between items-center">
+          <div className="mt-10 p-6 border-b border-navy-800 flex justify-between items-center">
             <h2 className="text-2xl font-serif font-bold text-navy-50">
               AI Skin Analysis Demo
             </h2>
