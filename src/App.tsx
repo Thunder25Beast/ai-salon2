@@ -16,6 +16,7 @@ import Contact from "./components/Contact";
 import DemoWidget from "./components/DemoWidget";
 import Results from "./components/Gallery";
 import Redirect from "./components/Redirect";
+import ScrollToTop from './components/ScrollToTop';
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,8 @@ const App = () => (
       <Sonner />
       
       <BrowserRouter>
+       <ScrollToTop />
+
         <Routes>
           <Route path="/" element={withLayout(Index)({})} />
           {/* <Route path="/portal" element={withLayout(CustomerPortal)({})} /> */}
