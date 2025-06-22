@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Confetti from 'react-confetti';
 import { Send, CheckCircle, TrendingUp, Users, Zap } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
@@ -25,6 +26,7 @@ const PartnerForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [backendStatus, setBackendStatus] = useState<string | null>(null);
   const { toast } = useToast();
+  const partnerSectionRef = useRef<HTMLElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -99,6 +101,12 @@ const PartnerForm = () => {
     }
   };
 
+  useEffect(() => {
+    if (isSubmitted) {
+      partnerSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [isSubmitted]);
+
   const benefits = [
     {
       icon: TrendingUp,
@@ -119,7 +127,8 @@ const PartnerForm = () => {
 
   if (isSubmitted) {
     return (
-      <section id="partner" className="section-padding bg-navy-900">
+      <section ref={partnerSectionRef} id="partner" className="mt-10 section-padding bg-navy-900">
+        <Confetti recycle={false} />
         <div className="container-width">
           <div className="max-w-2xl mx-auto text-center glass-effect rounded-3xl p-12">
             <CheckCircle className="h-20 w-20 text-coral-500 mx-auto mb-6" />
@@ -139,7 +148,7 @@ const PartnerForm = () => {
   }
 
   return (
-    <section id="partner" className="mt-10 section-padding bg-navy-900">
+    <section ref={partnerSectionRef} id="partner" className="mt-10 section-padding bg-navy-900">
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-navy-50">
