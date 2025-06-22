@@ -261,9 +261,9 @@ const PartnerForm = () => {
                       className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
                     >
                       <option value="">Select client type</option>
-                      <option value="men">Men</option>
-                      <option value="women">Women</option>
-                      <option value="unisex">Unisex</option>
+                      <option value="walk-in">Walk-in</option>
+                      <option value="appointment">Appointment</option>
+                      <option value="both">Both</option>
                     </select>
                   </div>
                 </div>
