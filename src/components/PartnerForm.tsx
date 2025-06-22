@@ -57,7 +57,7 @@ const PartnerForm = () => {
       const username = "admin";
       const password = "eagle123";
       const credentials = btoa(`${username}:${password}`);
-      await fetch('https://f74a-2409-40e0-1040-8ea4-d876-90ed-468-d2ba.ngrok-free.app/api/leads', {
+      await fetch('https://eagle-backend-v1-production.up.railway.app/api/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ const PartnerForm = () => {
 
   const testBackend = async () => {
     try {
-      const res = await fetch('https://f74a-2409-40e0-1040-8ea4-d876-90ed-468-d2ba.ngrok-free.app/api/leads');
+      const res = await fetch('https://eagle-backend-v1-production.up.railway.app/api/leads');
       if (res.ok) {
         setBackendStatus('Backend is reachable');
       } else {

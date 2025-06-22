@@ -46,7 +46,7 @@ const Footer = () => {
               <a href="#" className="p-3 glass-effect rounded-xl hover:bg-coral-500/20 transition-colors group">
                 <Twitter className="h-5 w-5 text-navy-400 group-hover:text-coral-400" />
               </a>
-              <a href="#" className="p-3 glass-effect rounded-xl hover:bg-coral-500/20 transition-colors group">
+              <a href="https://www.linkedin.com/company/eagleverse/posts/?feedView=all" className="p-3 glass-effect rounded-xl hover:bg-coral-500/20 transition-colors group">
                 <Linkedin className="h-5 w-5 text-navy-400 group-hover:text-coral-400" />
               </a>
             </div>
