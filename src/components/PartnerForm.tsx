@@ -81,7 +81,14 @@ const PartnerForm = () => {
 
   const testBackend = async () => {
     try {
-      const res = await fetch('https://eagle-backend-v1-production.up.railway.app/api/leads');
+      const username = "admin";
+      const password = "eagle123";
+      const credentials = btoa(`${username}:${password}`);
+      const res = await fetch('https://eagle-backend-v1-production.up.railway.app/api/leads', {
+        headers: {
+          'Authorization': `Basic ${credentials}`
+        }
+      });
       if (res.ok) {
         setBackendStatus('Backend is reachable');
       } else {
