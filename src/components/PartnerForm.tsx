@@ -139,7 +139,7 @@ const PartnerForm = () => {
               Our revenue optimization specialist will contact you within 24 hours to schedule your salon transformation.
             </p>
             <div className="text-coral-400 font-semibold">
-              Get ready to never have empty chairs again.
+              Get ready to unlock the magic of AI!
             </div>
           </div>
         </div>
