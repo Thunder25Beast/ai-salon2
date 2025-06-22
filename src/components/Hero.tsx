@@ -64,7 +64,7 @@ const Hero = ({ onShowDemo }: HeroProps) => {
               <Eye className="h-8 w-8 text-white" />
             </div>
             <h3 className="text-2xl font-serif font-semibold mb-4 text-navy-50">
-              Show What's Hidden
+              Discover the Unnoticed
             </h3>
             <p className="text-navy-300 leading-relaxed">
               Our AI reveals skin issues you never noticed so customers will understand why they need regular treatments.

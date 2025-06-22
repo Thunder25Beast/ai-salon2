@@ -7,7 +7,7 @@ const Features = () => {
       icon: Eye,
       title: "Advanced AI Detection",
       subtitle: "Show What's Barely Visible",
-      description: "Our cutting-edge AI reveals aesthetic scores, early aging signs, and hidden damage that creates instant trust and necessity for your services.",
+      description: "Our cutting-edge AI reveals aesthetic scores, early aging signs, and less-visible skin changes that creates instant trust and necessity for your services.",
       stats: "Detects issues barely visible to naked eye"
     },
     {
@@ -21,14 +21,14 @@ const Features = () => {
       icon: BarChart3,
       title: "Progress Tracking System",
       subtitle: "Visual Proof of Results",
-      description: "Clients become emotionally invested when they see measurable improvements in factors like skin score. Hooks clients with visible results, compelling them to book session after session.",
+      description: "Clients become emotionally invested when they see measurable improvements in factors like skin scores. Hooks clients with visible results, compelling them to book session after session.",
       stats: "30 - 40 % expected client returns"
     },
     {
       icon: Zap,
       title: "Instant Analysis",
       subtitle: "Real-Time Skin Scoring",
-      description: "Receive detailed skin health insights in seconds. Our AI's beautician verified accuracy transforms every consultation into an engaging, trust-building experience.",
+      description: "Receive detailed skin analysis insights in seconds. Our AI's beautician verified accuracy transforms every consultation into an engaging, trust-building experience.",
       stats: "Complete analysis in under 5-10 seconds"
     },
     // {
@@ -113,11 +113,11 @@ const Features = () => {
       </li>
       <li className="flex items-start gap-3">
         <span className="mt-1 text-coral-400">★</span>
-        <span>Show your clients issues they can't see themselves, creating <span className="text-coral-400 font-semibold">instant trust</span> through cutting-edge technology.</span>
+        <span>Make your clients aware of issues they often miss, creating <span className="text-coral-400 font-semibold">instant trust</span> through cutting-edge technology.</span>
       </li>
       <li className="flex items-start gap-3">
         <span className="mt-1 text-coral-400">★</span>
-        <span>Build <span className="text-coral-400 font-semibold">customer lifetime value</span> by turning every appointment into an engaging, evidence-driven experience.</span>
+        <span>Build <span className="text-coral-400 font-semibold">customer lifetime value</span> by turning every appointment into an engaging, results-driven experience.</span>
       </li>
       <li className="flex items-start gap-3">
         <span className="mt-1 text-coral-400">★</span>
