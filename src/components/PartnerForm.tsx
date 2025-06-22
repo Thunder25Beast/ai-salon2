@@ -66,7 +66,7 @@ const PartnerForm = () => {
           'Authorization': `Basic ${credentials}`
         },
         body: JSON.stringify(payload)
-      });
+      }); 
       setIsSubmitted(true);
       toast({
         title: "Partnership Request Submitted!",
@@ -103,7 +103,7 @@ const PartnerForm = () => {
 
   useEffect(() => {
     if (isSubmitted) {
-      partnerSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [isSubmitted]);
 
