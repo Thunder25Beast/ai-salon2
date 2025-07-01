@@ -37,9 +37,9 @@ const Hero = ({ onShowDemo }: HeroProps) => {
           </h1>
           <p className="text-xl md:text-2xl text-navy-200 max-w-4xl mx-auto leading-relaxed font-light">
             Show them what no one else can see and they will never leave your chair. <br/>
-            With <span className="text-coral-400 font-semibold"> with zero hardware installation </span>, our AI skin analysis turns every appointment into a show-stopping smart skin consultation that <span className="text-coral-400 font-semibold">hooks customers for a lifetime </span>
+            With <span className="text-coral-400 font-semibold"> with zero hardware installation </span>, our AI skin analysis turns every appointment into a show-stopping smart skin consultation proven to <span className="text-coral-400 font-semibold">increase customer retention </span>
            
-            and can increase your revenue <span className="text-coral-400 font-semibold">by upto 150% </span> 
+            and drive revenue growth <span className="text-coral-400 font-semibold">of upto 150% </span> 
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">

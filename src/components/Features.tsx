@@ -44,7 +44,7 @@ const Features = () => {
       icon: Crown,
       title: "Revenue Accelerator",
       subtitle: "Data-Driven Upselling",
-      description: "Leverage our AI insights to recommend premium services, turning every consultation into a profitable opportunity and increasing your revenue by up to 150%.",
+      description: "Leverage our AI insights to recommend suitable services, turning every consultation into a profitable opportunity and increasing your revenue by up to 150%.",
       stats: "Drive up to 150% more revenue for your salon."
 
 

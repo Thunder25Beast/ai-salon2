@@ -141,21 +141,26 @@ const Testimonials = () => {
         <div className="mt-12">
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center p-4 glass-effect rounded-2xl">
-              <Shield className="h-12 w-12 text-coral-400 mx-auto mb-3" />
-              <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">85% Accuracy</h3>
-              <p className="text-navy-300">AI-powered skin analysis with upto 85% precision curated and verified by skin beauty specialists</p>
+              {/* Accuracy: use Star icon */}
+              <Star className="h-12 w-12 text-coral-400 mx-auto mb-3" />
+              <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">85%+ Accuracy</h3>
+              <p className="text-navy-300">AI-powered skin analysis with more than 85% precision curated and verified by skin beauty specialists</p>
             </div>
             
             <div className="text-center p-4 glass-effect rounded-2xl">
-              <Users className="h-12 w-12 text-coral-400 mx-auto mb-3" />
+              {/* Data Safety: use Shield icon */}
+              <Shield className="h-12 w-12 text-coral-400 mx-auto mb-3" />
               <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">Data Safety</h3>
               <p className="text-navy-300">Enterprise-grade security for all client information</p>
             </div>
             
             <div className="text-center p-4 glass-effect rounded-2xl">
-              <Award className="h-12 w-12 text-coral-400 mx-auto mb-3" />
+              {/* IIT Bombay Team: use Users icon */}
+              <Users className="h-12 w-12 text-coral-400 mx-auto mb-3" />
               <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">IIT Bombay Team</h3>
-              <p className="text-navy-300">Built by top engineering talent from India's premier institute IIT Bombay</p>
+                <p className="text-navy-300">
+                Built by top engineering talent from India's premier institute IIT Bombay, with expertise in Artificial Intelligence.
+                </p>
             </div>
           </div>
         </div>
@@ -166,7 +171,7 @@ const Testimonials = () => {
           Meet Our Team
         </h2>
         <p className="text-xl text-navy-300 max-w-3xl mx-auto text-center mb-10">
-          The visionaries behind EagleVerse AI, blending deep tech, clinical expertise, and a passion for beauty innovation.
+          The visionaries behind EagleVerse AI, blending deep tech, and a passion for beauty innovation.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto justify-items-center">
           {/* Founder 1 */}
@@ -188,7 +193,7 @@ const Testimonials = () => {
             <img src={AryamanImg} alt="Aryaman"  className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
             <div className="font-bold text-lg text-navy-50 mb-1 text-center">Aryaman Panwar </div>
             <div className="text-coral-400 font-medium mb-2 text-center">CFO</div>
-            <div className="text-navy-300 text-center text-sm">An IIT-B EE student having experience in ML and GEN Al, and have done Research Projects under Professor in the field of Optimization of Price and demand, and Driven to create effective market strategies through data-driven modeling.</div>
+            <div className="text-navy-300 text-center text-sm">An IIT-B EE student having a touch of experience in ML, and have done Research Projects in the field of Optimization of Price and demand, and Driven to create effective market strategies through data-driven modeling.</div>
           </div>
         </div>
       </div>

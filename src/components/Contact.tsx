@@ -87,9 +87,9 @@ const Contact = () => {
               </h3>
               <div className="space-y-3 text-navy-300">
                 <div>• Sales Inquiries: Within 2 hours</div>
-                <div>• Technical Support: Within 4 hours</div>
-                <div>• Partnership Requests: Within 24 hours</div>
-                <div>• General Questions: Within 24 hours</div>
+                <div>• Technical Support: Within 12 hours</div>
+                <div>• Partnership Requests: Within 12 hours</div>
+                <div>• General Questions: Within 12 hours</div>
               </div>
             </div>
           </div>

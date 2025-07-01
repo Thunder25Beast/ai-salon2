@@ -8,7 +8,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "How accurate is the AI skin analysis?",
-      answer: "Our AI has been trained on over 100,000 skin images and achieves 94% accuracy in detecting skin issues. It can identify problems that are often missed by the human eye, including early signs of aging, sun damage, and pore irregularities."
+      answer: "Our AI has been trained on over 100,000 skin images and achieves more than 85% accuracy in detecting skin issues. It can identify problems that are often missed by the human eye, including early signs of aging."
     },
     {
       question: "How long does it take to see results?",
@@ -32,7 +32,7 @@ const FAQ = () => {
     },
     {
       question: "How do clients react to AI analysis?",
-      answer: "Clients love the technology! The visual analysis creates 'aha moments' where they see issues they never noticed. This builds trust and excitement about their treatment journey, leading to higher satisfaction and retention rates."
+      answer: "Clients trust the technology! The visual analysis creates 'Aha moments' where they see issues they never noticed along with a detailed report and some good recommendations. This builds trust and excitement about their treatment journey, leading to higher satisfaction and retention rates."
     },
     {
       question: "What if we're not satisfied with the results?",
@@ -91,11 +91,11 @@ const FAQ = () => {
 
         <div className="mt-16 text-center">
           <p className="text-navy-300 mb-6">
-            Still have questions? We're here to help!
+            Still have questions? Reach out to us directly.
           </p>
-          <button className="btn-primary">
-            Schedule a Consultation
-          </button>
+          <a href="/contact" className="btn-primary">
+            Contact Us
+          </a>
         </div>
       </div>
     </section>

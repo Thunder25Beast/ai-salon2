@@ -70,7 +70,7 @@ const PartnerForm = () => {
       setIsSubmitted(true);
       toast({
         title: "Partnership Request Submitted!",
-        description: "We'll contact you within 24 hours to discuss your revenue transformation.",
+        description: "We'll contact you within 12 hours to discuss your revenue transformation.",
       });
     } catch (err) {
       toast({
@@ -121,7 +121,7 @@ const PartnerForm = () => {
     {
       icon: Zap,
       title: "Implementation whenever you say",
-      description: "We’ll implement the system on your preferred date, no pressure, just your timeline."
+      description: "We’ll implement the system in 10 minutes on your preferred date, no pressure, just your timeline."
     }
   ];
 
@@ -136,9 +136,9 @@ const PartnerForm = () => {
               Welcome to the Revolution!
             </h2>
             <p className="text-navy-300 text-lg mb-6">
-              Our revenue optimization specialist will contact you within 24 hours to schedule your salon transformation.
+              Our revenue optimization specialist will contact you within 12 hours to schedule your salon transformation.
             </p>
-            <div className="text-coral-400 font-semibold">
+            <div className="text-coral-400 font-semibold text-xl mt-6">
               Get ready to unlock the magic of AI!
             </div>
           </div>
@@ -190,7 +190,7 @@ const PartnerForm = () => {
             <div className="mt-8 p-6 bg-coral-500/10 rounded-2xl border border-coral-500/20">
               <div className="text-coral-400 font-semibold mb-2">Limited Time Offer:</div>
               <div className="text-navy-50 text-lg">
-                First 10 partners get <span className="font-bold">1 month free</span> implementation support
+                First 30 partners get <span className="font-bold">1 month free</span> implementation support
               </div>
             </div>
           </div>
@@ -246,7 +246,7 @@ const PartnerForm = () => {
 
                   <div>
                     <label className="block text-navy-200 font-medium mb-2">
-                      Avg Monthly Footfall *
+                      Avg Monthly Customers *
                     </label>
                     <input
                       type="number"
@@ -255,7 +255,7 @@ const PartnerForm = () => {
                       value={formData.avgMonthlyFootfall}
                       onChange={(e) => setFormData({...formData, avgMonthlyFootfall: e.target.value})}
                       className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
-                      placeholder="Enter average monthly footfall"
+                      placeholder="Enter average monthly Customers"
                     />
                   </div>
 
@@ -393,7 +393,7 @@ const PartnerForm = () => {
 
                   <div className="md:col-span-2">
                     <label className="block text-navy-200 font-medium mb-2">
-                      Preferred Start Date
+                      Preferred Start Date (Optional)
                     </label>
                     <input
                       type="date"
@@ -427,7 +427,7 @@ const PartnerForm = () => {
               </button>
 
               <p className="text-navy-400 text-sm text-center">
-                We'll contact you within 24 hours to discuss your custom implementation plan
+                We'll contact you within 12 hours to discuss your custom implementation plan
               </p>
             </form>
           </div>

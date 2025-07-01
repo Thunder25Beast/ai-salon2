@@ -353,7 +353,7 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
                   </div>
                 </>
               ) : (
-                <div className="glass-effect rounded-2xl p-8 text-center">
+                <div className="glass-effect rounded-2xl p-8 text-center flex flex-col justify-center items-center h-full min-h-[400px]">
                   <div className="text-navy-400 mb-4">
                     <Zap className="h-16 w-16 mx-auto mb-4 opacity-50" />
                   </div>
@@ -371,15 +371,18 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
           {!isModal && (
             <div className="mt-12 text-center">
               <div className="glass-effect rounded-2xl p-8 max-w-3xl mx-auto">
-                <h3 className="text-2xl font-serif font-semibold mb-4 text-navy-50">
-                  Ready to Transform Your Salon?
-                </h3>
-                <p className="text-navy-300 mb-6">
-                  This is just a preview. Our full system offers advanced features, client tracking, and seamless integration with your workflow.
-                </p>
-                <button className="btn-primary">
-                  Start Your Free Trial
-                </button>
+              <h3 className="text-2xl font-serif font-semibold mb-4 text-navy-50">
+                Ready to Transform Your Salon?
+              </h3>
+              <p className="text-navy-300 mb-6">
+                This is just a preview. Our full system offers advanced features, client tracking, and seamless integration with your workflow.
+              </p>
+              <button
+                className="btn-primary"
+                onClick={() => window.location.href = "/partner"}
+              >
+                Start Your Free Trial
+              </button>
               </div>
             </div>
           )}
