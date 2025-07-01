@@ -176,88 +176,157 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
             </div>
           )}
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Upload Section */}
-            <div className="space-y-6">
-              <div className="glass-effect rounded-2xl p-8">
-                <h3 className="text-xl font-semibold mb-6 text-navy-50">
-                  Upload Client Photo
-                </h3>
-                
-                <div className="border-2 border-dashed border-navy-600 rounded-xl p-8 text-center hover:border-coral-500 transition-colors">
-                  {selectedImage ? (
-                    <div className="space-y-4">
-                      <img 
-                        src={selectedImage} 
-                        alt="Selected" 
-                        className="max-w-full h-64 object-cover rounded-lg mx-auto"
+          {/* Upload Section - now full width and on top */}
+          <div className="glass-effect rounded-2xl p-8 mb-8 w-full">
+            <h3 className="text-xl font-semibold mb-6 text-navy-50">
+              Upload Client Photo
+            </h3>
+            <div className="border-2 border-dashed border-navy-600 rounded-xl p-8 text-center hover:border-coral-500 transition-colors">
+              {selectedImage ? (
+                <div className="space-y-4">
+                  <img 
+                    src={selectedImage} 
+                    alt="Selected" 
+                    className="max-w-full h-64 object-cover rounded-lg mx-auto"
+                  />
+                  <div className="flex space-x-4 justify-center">
+                    <label className="btn-secondary cursor-pointer">
+                      <Upload className="h-4 w-4 mr-2" />
+                      Choose Different Photo
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        className="hidden"
                       />
-                      <div className="flex space-x-4 justify-center">
-                        <label className="btn-secondary cursor-pointer">
-                          <Upload className="h-4 w-4 mr-2" />
-                          Choose Different Photo
-                          <input
-                            type="file"
-                            accept="image/*"
-                            onChange={handleImageUpload}
-                            className="hidden"
-                          />
-                        </label>
-                        <button 
-                          onClick={runAnalysis}
-                          disabled={isAnalyzing}
-                          className="btn-primary flex items-center space-x-2"
-                        >
-                          {isAnalyzing ? (
-                            <>
-                              <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
-                              <span>Analyzing...</span>
-                            </>
-                          ) : (
-                            <>
-                              <Zap className="h-4 w-4" />
-                              <span>Run AI Analysis</span>
-                            </>
-                          )}
-                        </button>
+                    </label>
+                    <button 
+                      onClick={runAnalysis}
+                      disabled={isAnalyzing}
+                      className="btn-primary flex items-center space-x-2"
+                    >
+                      {isAnalyzing ? (
+                        <>
+                          <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
+                          <span>Analyzing...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Zap className="h-4 w-4" />
+                          <span>Run AI Analysis</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <label className="cursor-pointer">
+                    <Camera className="h-16 w-16 text-navy-400 mx-auto mb-4" />
+                    <div className="text-navy-200 font-medium mb-2">
+                      Upload a photo to analyze
+                    </div>
+                    <div className="text-navy-400 text-sm mb-4">
+                      JPG, PNG or GIF up to 10MB
+                    </div>
+                    <div className="btn-primary inline-flex items-center space-x-2">
+                      <Upload className="h-4 w-4" />
+                      <span>Browse Photo</span>
+                    </div>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="hidden"
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    className="btn-secondary flex items-center space-x-2 mt-4 mx-auto"
+                    onClick={openCamera}
+                  >
+                    <Camera className="h-4 w-4" />
+                    <span>Take Photo</span>
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Results Section - full width below upload */}
+          {analysisResults ? (
+            <div className="space-y-6 w-full mb-8">
+              <div className="glass-effect rounded-2xl p-8">
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="text-xl font-semibold text-navy-50">
+                    Analysis Results
+                  </h3>
+                  <div className="text-right">
+                    <div className="text-2xl font-bold text-coral-400">
+                      {analysisResults.overallScore}%
+                    </div>
+                    <div className="text-navy-400 text-sm">Skin Health Score</div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {analysisResults.issues.map((issue: any, index: number) => (
+                    <div key={index} className="bg-navy-800/50 rounded-lg p-4">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-medium text-navy-50">{issue.type}</span>
+                        <span className="text-coral-400 font-semibold">{issue.revenue}</span>
+                      </div>
+                      <div className="flex justify-between text-sm text-navy-400 mb-2">
+                        <span>{issue.count} areas detected</span>
+                        <span>Severity: {issue.severity}%</span>
+                      </div>
+                      <div className="w-full bg-navy-700 rounded-full h-2">
+                        <div 
+                          className="bg-coral-500 h-2 rounded-full transition-all duration-300"
+                          style={{ width: `${issue.severity}%` }}
+                        ></div>
                       </div>
                     </div>
-                  ) : (
-                    <>
-                      <label className="cursor-pointer">
-                        <Camera className="h-16 w-16 text-navy-400 mx-auto mb-4" />
-                        <div className="text-navy-200 font-medium mb-2">
-                          Upload a photo to analyze
-                        </div>
-                        <div className="text-navy-400 text-sm mb-4">
-                          JPG, PNG or GIF up to 10MB
-                        </div>
-                        <div className="btn-primary inline-flex items-center space-x-2">
-                          <Upload className="h-4 w-4" />
-                          <span>Choose Photo</span>
-                        </div>
-                        <input
-                          type="file"
-                          accept="image/*"
-                          onChange={handleImageUpload}
-                          className="hidden"
-                        />
-                      </label>
-                      <button
-                        type="button"
-                        className="btn-secondary flex items-center space-x-2 mt-4 mx-auto"
-                        onClick={openCamera}
-                      >
-                        <Camera className="h-4 w-4" />
-                        <span>Take Photo</span>
-                      </button>
-                    </>
-                  )}
+                  ))}
                 </div>
               </div>
-
-              {/* Sample Images */}
-              <div className="glass-effect rounded-2xl p-6">
+              <div className="glass-effect rounded-2xl p-8">
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="text-xl font-semibold text-navy-50">
+                    Recommended Treatments
+                  </h3>
+                  <div className="text-coral-400 font-bold text-lg">
+                    Total: {analysisResults.potentialRevenue}
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  {analysisResults.recommendations.map((rec: string, index: number) => (
+                    <div key={index} className="flex items-center justify-between bg-navy-800/50 rounded-lg p-3">
+                      <span className="text-navy-200">{rec}</span>
+                      <Target className="h-4 w-4 text-coral-400" />
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 pt-6 border-t border-navy-700">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <div className="text-navy-50 font-semibold">Potential Revenue Increase</div>
+                      <div className="text-navy-400 text-sm">From this single consultation</div>
+                    </div>
+                    <div className="flex items-center space-x-2 text-coral-400">
+                      <TrendingUp className="h-5 w-5" />
+                      <span className="text-xl font-bold">+{analysisResults.potentialRevenue}</span>
+                    </div>
+                  </div>
+                  <button className="w-full btn-primary flex items-center justify-center space-x-2">
+                    <Download className="h-4 w-4" />
+                    <span>Download Full Report</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mb-8">
+              <div className="glass-effect rounded-2xl p-6 flex flex-col justify-center">
                 <h4 className="text-lg font-semibold mb-4 text-navy-50">
                   Try Sample Images
                 </h4>
@@ -273,117 +342,18 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
                   ))}
                 </div>
               </div>
-            </div>
-
-            {/* Results Section */}
-            <div className="space-y-6">
-              {analysisResults ? (
-                <>
-                  <div className="glass-effect rounded-2xl p-8">
-                    <div className="flex justify-between items-center mb-6">
-                      <h3 className="text-xl font-semibold text-navy-50">
-                        Analysis Results
-                      </h3>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-coral-400">
-                          {analysisResults.overallScore}%
-                        </div>
-                        <div className="text-navy-400 text-sm">Skin Health Score</div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      {analysisResults.issues.map((issue: any, index: number) => (
-                        <div key={index} className="bg-navy-800/50 rounded-lg p-4">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="font-medium text-navy-50">{issue.type}</span>
-                            <span className="text-coral-400 font-semibold">{issue.revenue}</span>
-                          </div>
-                          <div className="flex justify-between text-sm text-navy-400 mb-2">
-                            <span>{issue.count} areas detected</span>
-                            <span>Severity: {issue.severity}%</span>
-                          </div>
-                          <div className="w-full bg-navy-700 rounded-full h-2">
-                            <div 
-                              className="bg-coral-500 h-2 rounded-full transition-all duration-300"
-                              style={{ width: `${issue.severity}%` }}
-                            ></div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="glass-effect rounded-2xl p-8">
-                    <div className="flex justify-between items-center mb-6">
-                      <h3 className="text-xl font-semibold text-navy-50">
-                        Recommended Treatments
-                      </h3>
-                      <div className="text-coral-400 font-bold text-lg">
-                        Total: {analysisResults.potentialRevenue}
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      {analysisResults.recommendations.map((rec: string, index: number) => (
-                        <div key={index} className="flex items-center justify-between bg-navy-800/50 rounded-lg p-3">
-                          <span className="text-navy-200">{rec}</span>
-                          <Target className="h-4 w-4 text-coral-400" />
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-6 pt-6 border-t border-navy-700">
-                      <div className="flex items-center justify-between mb-4">
-                        <div>
-                          <div className="text-navy-50 font-semibold">Potential Revenue Increase</div>
-                          <div className="text-navy-400 text-sm">From this single consultation</div>
-                        </div>
-                        <div className="flex items-center space-x-2 text-coral-400">
-                          <TrendingUp className="h-5 w-5" />
-                          <span className="text-xl font-bold">+{analysisResults.potentialRevenue}</span>
-                        </div>
-                      </div>
-                      
-                      <button className="w-full btn-primary flex items-center justify-center space-x-2">
-                        <Download className="h-4 w-4" />
-                        <span>Download Full Report</span>
-                      </button>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <div className="glass-effect rounded-2xl p-8 text-center flex flex-col justify-center items-center h-full min-h-[400px]">
-                  <div className="text-navy-400 mb-4">
-                    <Zap className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-navy-50">
-                    Ready for Analysis
-                  </h3>
-                  <p className="text-navy-400">
-                    Upload an image and click "Run AI Analysis" to see detailed skin assessment and revenue opportunities.
-                  </p>
+              <div className="glass-effect rounded-2xl p-8 text-center flex flex-col justify-center">
+                <div className="text-navy-400 mb-4">
+                  <Zap className="h-16 w-16 mx-auto mb-4 opacity-50" />
                 </div>
-              )}
-            </div>
-          </div>
-
-          {!isModal && (
-            <div className="mt-12 text-center">
-              <div className="glass-effect rounded-2xl p-8 max-w-3xl mx-auto">
-              <h3 className="text-2xl font-serif font-semibold mb-4 text-navy-50">
-                Ready to Transform Your Salon?
-              </h3>
-              <p className="text-navy-300 mb-6">
-                This is just a preview. Our full system offers advanced features, client tracking, and seamless integration with your workflow.
-              </p>
-              <button
-                className="btn-primary"
-                onClick={() => window.location.href = "/partner"}
-              >
-                Start Your Free Trial
-              </button>
+                <h3 className="text-xl font-semibold mb-2 text-navy-50">
+                  Ready for Analysis
+                </h3>
+                <p className="text-navy-400">
+                  Upload an image and click "Run AI Analysis" to see detailed skin assessment and revenue opportunities.
+                </p>
               </div>
+              
             </div>
           )}
         </div>
