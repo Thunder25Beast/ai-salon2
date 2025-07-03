@@ -55,10 +55,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-navy-50 mb-6">Resources</h4>
             <div className="space-y-3">
-              <a href="#" className="block text-navy-300 hover:text-coral-400 transition-colors flex items-center space-x-2">
+              {/* <a href="#" className="block text-navy-300 hover:text-coral-400 transition-colors flex items-center space-x-2">
                 <MessageCircle className="h-4 w-4" />
                 <span>Success Stories</span>
-              </a>
+              </a> */}
               <a href="#" className="block text-navy-300 hover:text-coral-400 transition-colors flex items-center space-x-2">
                 <FileText className="h-4 w-4" />
                 <span>Implementation Guide</span>

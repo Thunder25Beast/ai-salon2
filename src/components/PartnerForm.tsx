@@ -115,7 +115,7 @@ const PartnerForm = () => {
     },
     {
       icon: Users,
-      title: "90-Day Client Retention Goal",
+      title: "30-Day Client Retention Goal",
       description: "Clients get automatic notifications for follow-ups, helping you build consistent return visits."
     },
     {

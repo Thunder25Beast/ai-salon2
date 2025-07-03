@@ -147,22 +147,22 @@ const Gallery = () => {
           <h3 className="text-2xl font-serif font-semibold mb-4 text-navy-50">
             Aggregate Performance Metrics
           </h3>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-6 md:gap-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-coral-400 mb-2">84%</div>
-              <div className="text-navy-300">Average Improvement</div>
+              <div className="text-3xl font-bold text-coral-400 mb-2">55%</div>
+              <div className="text-navy-300">Customer Retention Increase</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-coral-400 mb-2">4.8/5</div>
-              <div className="text-navy-300">Client Satisfaction</div>
+              <div className="text-3xl font-bold text-coral-400 mb-2">By 150%</div>
+              <div className="text-navy-300">Average Upselling</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-coral-400 mb-2">6.2</div>
-              <div className="text-navy-300">Avg Treatments per Client</div>
+              <div className="text-3xl font-bold text-coral-400 mb-2">+25%</div>
+              <div className="text-navy-300">Growth in High-Value Services</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-coral-400 mb-2">$1,556</div>
-              <div className="text-navy-300">Avg Revenue per Journey</div>
+              <div className="text-3xl font-bold text-coral-400 mb-2">₹1,000</div>
+              <div className="text-navy-300">Avg Increment in Revenue per Client</div>
             </div>
           </div>
         </div>

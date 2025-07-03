@@ -53,7 +53,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-navy-200 font-medium">Email</div>
-                    <div className="text-coral-400">hello@EagleVerseai.com</div>
+                    <div className="text-coral-400">team@eagleverse.tech</div>
                   </div>
                 </div>
 
@@ -63,7 +63,11 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-navy-200 font-medium">Phone</div>
-                    <div className="text-coral-400">+91 (987) 123-4567</div>
+                    <div className="text-coral-400">
+                      Saksham: +91 (987) 123-4567<br />
+                      Aryaman: +91 (987) 234-5678<br />
+                      Vivek: +91 (987) 345-6789
+                    </div>
                   </div>
                 </div>
 
