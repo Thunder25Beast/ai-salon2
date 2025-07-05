@@ -44,60 +44,60 @@ const Testimonials = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="section-padding bg-navy-800 py-8 md:py-12">
-      <div className="container-width">
-        {/* <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-navy-50">
+    <section className="section-padding bg-navy-800 py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="container-width max-w-7xl mx-auto">
+        {/* <div className="text-center mb-8 sm:mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-navy-50 leading-tight">
             Early Partners,
             <span className="gradient-text"> Real Feedback</span>
           </h2>
-          <p className="text-xl text-navy-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-navy-300 max-w-3xl mx-auto px-4">
             Hear from salons already using our AI technology to transform their client relationships
           </p>
-        </div>
+        </div> */}
 
-        <div className="max-w-5xl mx-auto">
-          <div className="glass-effect rounded-3xl p-6 md:p-8 animate-scale-in">
-            <div className="flex flex-col lg:flex-row gap-8 items-center">
-              <div className="lg:w-1/2">
-                <div className="flex items-center mb-4">
+        {/* <div className="max-w-6xl mx-auto">
+          <div className="glass-effect rounded-3xl p-4 sm:p-6 md:p-8 animate-scale-in">
+            <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-center">
+              <div className="lg:w-1/2 w-full">
+                <div className="flex items-center mb-3 sm:mb-4 justify-center lg:justify-start">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-6 w-6 text-coral-400 fill-current" />
+                    <Star key={i} className="h-5 w-5 sm:h-6 sm:w-6 text-coral-400 fill-current" />
                   ))}
                 </div>
                 
-                <blockquote className="text-xl md:text-2xl leading-relaxed text-navy-100 mb-6 font-light italic">
+                <blockquote className="text-lg sm:text-xl md:text-2xl leading-relaxed text-navy-100 mb-4 sm:mb-6 font-light italic text-center lg:text-left">
                   "{currentTestimonial.quote}"
                 </blockquote>
                 
-                <div className="flex items-center mb-6">
+                <div className="flex items-center mb-4 sm:mb-6 justify-center lg:justify-start">
                   <img 
                     src={currentTestimonial.image}
                     alt={currentTestimonial.name}
-                    className="w-16 h-16 rounded-full object-cover mr-4"
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover mr-3 sm:mr-4"
                   />
-                  <div>
-                    <div className="font-semibold text-navy-50 text-lg">
+                  <div className="text-center lg:text-left">
+                    <div className="font-semibold text-navy-50 text-base sm:text-lg">
                       {currentTestimonial.name}
                     </div>
-                    <div className="text-coral-400 font-medium">
+                    <div className="text-coral-400 font-medium text-sm sm:text-base">
                       {currentTestimonial.role}
                     </div>
-                    <div className="text-navy-400 text-sm">
+                    <div className="text-navy-400 text-xs sm:text-sm">
                       {currentTestimonial.type}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="lg:w-1/2">
+              <div className="lg:w-1/2 w-full">
                 <div className="relative">
                   <img 
                     src={currentTestimonial.beforeAfter}
                     alt="AI skin analysis example"
-                    className="w-full h-64 object-cover rounded-2xl shadow-2xl"
+                    className="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-2xl"
                   />
-                  <div className="absolute top-4 left-4 bg-coral-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-coral-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                     AI Analysis
                   </div>
                 </div>
@@ -105,12 +105,12 @@ const Testimonials = () => {
             </div>
           </div>
 
-          <div className="flex justify-center items-center mt-6 space-x-4">
+          <div className="flex justify-center items-center mt-4 sm:mt-6 space-x-3 sm:space-x-4">
             <button 
               onClick={prevTestimonial}
               className="p-2 glass-effect rounded-full hover:bg-coral-500/20 transition-colors"
             >
-              <ChevronLeft className="h-6 w-6 text-navy-200" />
+              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-navy-200" />
             </button>
             
             <div className="flex space-x-2">
@@ -118,7 +118,7 @@ const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
+                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-colors ${
                     index === currentIndex ? 'bg-coral-500' : 'bg-navy-600'
                   }`}
                 />
@@ -129,36 +129,37 @@ const Testimonials = () => {
               onClick={nextTestimonial}
               className="p-2 glass-effect rounded-full hover:bg-coral-500/20 transition-colors"
             >
-              <ChevronRight className="h-6 w-6 text-navy-200" />
+              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-navy-200" />
             </button>
           </div>
         </div> */}
 
         {/* Credibility Section */}
-        <h2 className="text-4xl text-center md:text-5xl font-serif font-bold mb-4 text-navy-50">
-            Our Credibility:     
-     </h2>
-        <div className="mt-12">
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-4 glass-effect rounded-2xl">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl text-center font-serif font-bold mb-6 sm:mb-8 text-navy-50 leading-tight">
+            Our Credibility     
+        </h2>
+        <div className="mt-8 sm:mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <div className="text-center p-4 sm:p-6 glass-effect rounded-2xl">
               {/* Accuracy: use Star icon */}
-              <Star className="h-12 w-12 text-coral-400 mx-auto mb-3" />
-              <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">85%+ Accuracy</h3>
-              <p className="text-navy-300">AI-powered skin analysis with more than 85% precision curated and verified by skin beauty specialists</p>
+              <Star className="h-10 w-10 sm:h-12 sm:w-12 text-coral-400 mx-auto mb-3" />
+              <h3 className="text-lg sm:text-xl font-serif font-semibold mb-1 sm:mb-2 text-navy-50">85%+ Accuracy</h3>
+              <p className="text-navy-300 text-sm sm:text-base">AI-powered skin analysis with more than 85% precision curated and verified by skin beauty specialists</p>
             </div>
             
-            <div className="text-center p-4 glass-effect rounded-2xl">
+            
+            <div className="text-center p-4 sm:p-6 glass-effect rounded-2xl">
               {/* Data Safety: use Shield icon */}
-              <Shield className="h-12 w-12 text-coral-400 mx-auto mb-3" />
-              <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">Data Safety</h3>
-              <p className="text-navy-300">Enterprise-grade security for all client information</p>
+              <Shield className="h-10 w-10 sm:h-12 sm:w-12 text-coral-400 mx-auto mb-3" />
+              <h3 className="text-lg sm:text-xl font-serif font-semibold mb-1 sm:mb-2 text-navy-50">Data Safety</h3>
+              <p className="text-navy-300 text-sm sm:text-base">Enterprise-grade security for all client information</p>
             </div>
             
-            <div className="text-center p-4 glass-effect rounded-2xl">
+            <div className="text-center p-4 sm:p-6 glass-effect rounded-2xl">
               {/* IIT Bombay Team: use Users icon */}
-              <Users className="h-12 w-12 text-coral-400 mx-auto mb-3" />
-              <h3 className="text-xl font-serif font-semibold mb-1 text-navy-50">IIT Bombay Team</h3>
-                <p className="text-navy-300">
+              <Users className="h-10 w-10 sm:h-12 sm:w-12 text-coral-400 mx-auto mb-3" />
+              <h3 className="text-lg sm:text-xl font-serif font-semibold mb-1 sm:mb-2 text-navy-50">IIT Bombay Team</h3>
+                <p className="text-navy-300 text-sm sm:text-base">
                 Built by top engineering talent from India's premier institute IIT Bombay, with expertise in Artificial Intelligence.
                 </p>
             </div>
@@ -166,34 +167,34 @@ const Testimonials = () => {
         </div>
       </div>
       {/* Our Team Section */}
-      <div className="container-width mt-20">
-        <h2 className="text-4xl text-center md:text-5xl font-serif font-bold mb-4 text-navy-50">
+      <div className="container-width mt-12 sm:mt-20">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl text-center font-serif font-bold mb-4 sm:mb-6 text-navy-50 leading-tight">
           Meet Our Team
         </h2>
-        <p className="text-xl text-navy-300 max-w-3xl mx-auto text-center mb-10">
+        <p className="text-lg sm:text-xl text-navy-300 max-w-3xl mx-auto text-center mb-8 sm:mb-10 px-4">
           The visionaries behind EagleVerse AI, blending deep tech, and a passion for beauty innovation.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto justify-items-center px-4">
           {/* Founder 1 */}
-            <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
-            <img src={SakshamImg} alt="Saksham" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow"  />
-            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Saksham Kumar</div>
-            <div className="text-coral-400 font-medium mb-2 text-center">CEO</div>
-            <div className="text-navy-300 text-center text-sm"> An IIT-B EE student having experience in ML in healthcare, B2B business strategy, Team Leadership and Research Experience in B2B buyer-seller interaction in Metaverse, having passion and drive to innovate in the field of Virtual Reality and Metaverse.</div>
+            <div className="bg-navy-900/80 glass-effect rounded-2xl p-4 sm:p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform w-full max-w-sm">
+            <img src={SakshamImg} alt="Saksham" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover mb-3 sm:mb-4 border-4 border-coral-400 shadow"  />
+            <div className="font-bold text-base sm:text-lg text-navy-50 mb-1 text-center">Saksham Kumar</div>
+            <div className="text-coral-400 font-medium mb-2 text-sm sm:text-base text-center">CEO</div>
+            <div className="text-navy-300 text-center text-xs sm:text-sm leading-relaxed"> An IIT-B EE student having experience in ML in healthcare, B2B business strategy, Team Leadership and Research Experience in B2B buyer-seller interaction in Metaverse, having passion and drive to innovate in the field of Virtual Reality and Metaverse.</div>
             </div>
           {/* Founder 2 */}
-          <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
-            <img src={AshwinImg} alt="Ashwin" className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow"  />
-            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Ashwin Nagarwal</div>
-            <div className="text-coral-400 font-medium mb-2 text-center">CTO</div>
-            <div className="text-navy-300 text-center text-sm">An IIT-B EE student having experience in ML projects taken under guidance of renowned Professors at IITB in the field of Med-tech and LLM used for making chatbots.</div>
+          <div className="bg-navy-900/80 glass-effect rounded-2xl p-4 sm:p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform w-full max-w-sm">
+            <img src={AshwinImg} alt="Ashwin" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover mb-3 sm:mb-4 border-4 border-coral-400 shadow"  />
+            <div className="font-bold text-base sm:text-lg text-navy-50 mb-1 text-center">Ashwin Nagarwal</div>
+            <div className="text-coral-400 font-medium mb-2 text-sm sm:text-base text-center">CTO</div>
+            <div className="text-navy-300 text-center text-xs sm:text-sm leading-relaxed">An IIT-B EE student having experience in ML projects taken under guidance of renowned Professors at IITB in the field of Med-tech and LLM used for making chatbots.</div>
           </div>
           {/* Founder 3 */}
-          <div className="bg-navy-900/80 glass-effect rounded-2xl p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform">
-            <img src={AryamanImg} alt="Aryaman"  className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-coral-400 shadow" />
-            <div className="font-bold text-lg text-navy-50 mb-1 text-center">Aryaman Panwar </div>
-            <div className="text-coral-400 font-medium mb-2 text-center">CFO</div>
-            <div className="text-navy-300 text-center text-sm">An IIT-B EE student having a touch of experience in ML, and have done Research Projects in the field of Optimization of Price and demand, and Driven to create effective market strategies through data-driven modeling.</div>
+          <div className="bg-navy-900/80 glass-effect rounded-2xl p-4 sm:p-6 flex flex-col items-center shadow-lg hover:scale-105 transition-transform w-full max-w-sm">
+            <img src={AryamanImg} alt="Aryaman"  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover mb-3 sm:mb-4 border-4 border-coral-400 shadow" />
+            <div className="font-bold text-base sm:text-lg text-navy-50 mb-1 text-center">Aryaman Panwar </div>
+            <div className="text-coral-400 font-medium mb-2 text-sm sm:text-base text-center">CFO</div>
+            <div className="text-navy-300 text-center text-xs sm:text-sm leading-relaxed">An IIT-B EE student having a touch of experience in ML, and have done Research Projects in the field of Optimization of Price and demand, and Driven to create effective market strategies through data-driven modeling.</div>
           </div>
         </div>
       </div>

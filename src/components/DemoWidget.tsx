@@ -163,34 +163,34 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
           </div>
         )}
 
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           {!isModal && (
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-navy-50">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-navy-50 leading-tight">
                 Experience Our
                 <span className="gradient-text"> AI Analysis</span>
               </h2>
-              <p className="text-xl text-navy-300 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-navy-300 max-w-3xl mx-auto px-4">
                 Upload a photo and see how our AI identifies skin issues that drive additional revenue
               </p>
             </div>
           )}
 
           {/* Upload Section - now full width and on top */}
-          <div className="glass-effect rounded-2xl p-8 mb-8 w-full">
-            <h3 className="text-xl font-semibold mb-6 text-navy-50">
+          <div className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 w-full">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-navy-50">
               Upload Client Photo
             </h3>
-            <div className="border-2 border-dashed border-navy-600 rounded-xl p-8 text-center hover:border-coral-500 transition-colors">
+            <div className="border-2 border-dashed border-navy-600 rounded-xl p-4 sm:p-6 lg:p-8 text-center hover:border-coral-500 transition-colors">
               {selectedImage ? (
                 <div className="space-y-4">
                   <img 
                     src={selectedImage} 
                     alt="Selected" 
-                    className="max-w-full h-64 object-cover rounded-lg mx-auto"
+                    className="max-w-full h-48 sm:h-64 object-cover rounded-lg mx-auto"
                   />
-                  <div className="flex space-x-4 justify-center">
-                    <label className="btn-secondary cursor-pointer">
+                  <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 justify-center">
+                    <label className="btn-secondary cursor-pointer text-sm sm:text-base">
                       <Upload className="h-4 w-4 mr-2" />
                       Choose Different Photo
                       <input
@@ -203,7 +203,7 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
                     <button 
                       onClick={runAnalysis}
                       disabled={isAnalyzing}
-                      className="btn-primary flex items-center space-x-2"
+                      className="btn-primary flex items-center justify-center space-x-2 text-sm sm:text-base"
                     >
                       {isAnalyzing ? (
                         <>
@@ -221,15 +221,15 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
                 </div>
               ) : (
                 <>
-                  <label className="cursor-pointer">
-                    <Camera className="h-16 w-16 text-navy-400 mx-auto mb-4" />
-                    <div className="text-navy-200 font-medium mb-2">
+                  <label className="cursor-pointer block">
+                    <Camera className="h-12 w-12 sm:h-16 sm:w-16 text-navy-400 mx-auto mb-3 sm:mb-4" />
+                    <div className="text-navy-200 font-medium mb-2 text-sm sm:text-base">
                       Upload a photo to analyze
                     </div>
-                    <div className="text-navy-400 text-sm mb-4">
+                    <div className="text-navy-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       JPG, PNG or GIF up to 10MB
                     </div>
-                    <div className="btn-primary inline-flex items-center space-x-2">
+                    <div className="btn-primary inline-flex items-center space-x-2 text-sm sm:text-base">
                       <Upload className="h-4 w-4" />
                       <span>Browse Photo</span>
                     </div>
@@ -242,7 +242,7 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
                   </label>
                   <button
                     type="button"
-                    className="btn-secondary flex items-center space-x-2 mt-4 mx-auto"
+                    className="btn-secondary flex items-center space-x-2 mt-3 sm:mt-4 mx-auto text-sm sm:text-base"
                     onClick={openCamera}
                   >
                     <Camera className="h-4 w-4" />
@@ -255,27 +255,27 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
 
           {/* Results Section - full width below upload */}
           {analysisResults ? (
-            <div className="space-y-6 w-full mb-8">
-              <div className="glass-effect rounded-2xl p-8">
-                <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-xl font-semibold text-navy-50">
+            <div className="space-y-4 sm:space-y-6 w-full mb-6 sm:mb-8">
+              <div className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 sm:mb-6 space-y-2 sm:space-y-0">
+                  <h3 className="text-lg sm:text-xl font-semibold text-navy-50">
                     Analysis Results
                   </h3>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-coral-400">
+                  <div className="text-left sm:text-right">
+                    <div className="text-xl sm:text-2xl font-bold text-coral-400">
                       {analysisResults.overallScore}%
                     </div>
-                    <div className="text-navy-400 text-sm">Skin Health Score</div>
+                    <div className="text-navy-400 text-xs sm:text-sm">Skin Health Score</div>
                   </div>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {analysisResults.issues.map((issue: any, index: number) => (
-                    <div key={index} className="bg-navy-800/50 rounded-lg p-4">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-medium text-navy-50">{issue.type}</span>
-                        <span className="text-coral-400 font-semibold">{issue.revenue}</span>
+                    <div key={index} className="bg-navy-800/50 rounded-lg p-3 sm:p-4">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 space-y-1 sm:space-y-0">
+                        <span className="font-medium text-navy-50 text-sm sm:text-base">{issue.type}</span>
+                        <span className="text-coral-400 font-semibold text-sm sm:text-base">{issue.revenue}</span>
                       </div>
-                      <div className="flex justify-between text-sm text-navy-400 mb-2">
+                      <div className="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-navy-400 mb-2 space-y-1 sm:space-y-0">
                         <span>{issue.count} areas detected</span>
                         <span>Severity: {issue.severity}%</span>
                       </div>
@@ -289,12 +289,12 @@ const DemoWidget = ({ onClose, isModal = true }: DemoWidgetProps) => {
                   ))}
                 </div>
               </div>
-              <div className="glass-effect rounded-2xl p-8">
-                <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-xl font-semibold text-navy-50">
+              <div className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 sm:mb-6 space-y-2 sm:space-y-0">
+                  <h3 className="text-lg sm:text-xl font-semibold text-navy-50">
                     Recommended Treatments
                   </h3>
-                  <div className="text-coral-400 font-bold text-lg">
+                  <div className="text-coral-400 font-bold text-base sm:text-lg">
                     Total: {analysisResults.potentialRevenue}
                   </div>
                 </div>

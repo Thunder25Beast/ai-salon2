@@ -26,25 +26,27 @@ const App = () => (
       <Toaster />
       <Sonner />
       
-      <BrowserRouter>
-       <ScrollToTop />
+      <div className="overflow-x-hidden">
+        <BrowserRouter>
+          <ScrollToTop />
 
-        <Routes>
-          <Route path="/" element={withLayout(Index)({})} />
-          {/* <Route path="/portal" element={withLayout(CustomerPortal)({})} /> */}
-          <Route path="/features" element={withLayout(Features)({})} />
-          <Route path="/testimonials" element={withLayout(Testimonials)({})} />
-          <Route path="/partner" element={withLayout(PartnerForm)({})} />
-          <Route path="/gallery" element={withLayout(Gallery)({})} />
-          <Route path="/faq" element={withLayout(FAQ)({})} />
-          <Route path="/contact" element={withLayout(Contact)({})} />
-          <Route path="/demo" element={withLayout(() => <DemoWidget isModal={false} onClose={() => {}} />)({})} />
-          <Route path="/results" element={withLayout(Results)({})} />
-          <Route path="/redirect" element={withLayout(Redirect)({})} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={withLayout(Redirect)({ to: "/" })} />
-        </Routes>
-      </BrowserRouter>
+          <Routes>
+            <Route path="/" element={withLayout(Index)({})} />
+            {/* <Route path="/portal" element={withLayout(CustomerPortal)({})} /> */}
+            <Route path="/features" element={withLayout(Features)({})} />
+            <Route path="/testimonials" element={withLayout(Testimonials)({})} />
+            <Route path="/partner" element={withLayout(PartnerForm)({})} />
+            <Route path="/gallery" element={withLayout(Gallery)({})} />
+            <Route path="/faq" element={withLayout(FAQ)({})} />
+            <Route path="/contact" element={withLayout(Contact)({})} />
+            <Route path="/demo" element={withLayout(() => <DemoWidget isModal={false} onClose={() => {}} />)({})} />
+            <Route path="/results" element={withLayout(Results)({})} />
+            <Route path="/redirect" element={withLayout(Redirect)({})} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={withLayout(Redirect)({ to: "/" })} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );

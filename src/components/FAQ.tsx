@@ -45,19 +45,19 @@ const FAQ = () => {
   };
 
   return (
-    <section className="mt-10 section-padding bg-navy-900">
-      <div className="container-width">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-navy-50">
+    <section className="mt-10 section-padding bg-navy-900 px-4 sm:px-6 lg:px-8">
+      <div className="container-width max-w-7xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-navy-50 leading-tight">
             Frequently Asked
             <span className="gradient-text"> Questions</span>
           </h2>
-          <p className="text-xl text-navy-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-navy-300 max-w-3xl mx-auto px-4">
             Everything you need to know about transforming your salon with AI
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div 
               key={index}
@@ -66,21 +66,23 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full p-6 text-left flex justify-between items-center hover:bg-navy-800/30 transition-colors"
+                className="w-full p-4 sm:p-6 text-left flex justify-between items-start hover:bg-navy-800/30 transition-colors"
               >
-                <h3 className="text-lg font-semibold text-navy-50 pr-4">
+                <h3 className="text-base sm:text-lg font-semibold text-navy-50 pr-3 sm:pr-4 leading-tight">
                   {faq.question}
                 </h3>
-                {openIndex === index ? (
-                  <ChevronUp className="h-5 w-5 text-coral-400 flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-coral-400 flex-shrink-0" />
-                )}
+                <div className="flex-shrink-0 mt-1">
+                  {openIndex === index ? (
+                    <ChevronUp className="h-4 w-4 sm:h-5 sm:w-5 text-coral-400" />
+                  ) : (
+                    <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-coral-400" />
+                  )}
+                </div>
               </button>
               
               {openIndex === index && (
-                <div className="px-6 pb-6">
-                  <p className="text-navy-300 leading-relaxed">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                  <p className="text-navy-300 leading-relaxed text-sm sm:text-base">
                     {faq.answer}
                   </p>
                 </div>
@@ -89,11 +91,11 @@ const FAQ = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-navy-300 mb-6">
+        <div className="mt-12 sm:mt-16 text-center">
+          <p className="text-navy-300 mb-4 sm:mb-6 text-sm sm:text-base px-4">
             Still have questions? Reach out to us directly.
           </p>
-          <a href="/contact" className="btn-primary">
+          <a href="/contact" className="btn-primary text-sm sm:text-base">
             Contact Us
           </a>
         </div>
