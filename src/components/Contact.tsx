@@ -14,7 +14,7 @@ const Contact = () => {
     e.preventDefault();
     console.log('Contact form submitted:', formData);
     // Handle form submission
-    alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+    alert('Thank you for your message! We\'ll get back to you within 12 hours.');
     setFormData({ name: '', email: '', subject: '', message: '', type: 'general' });
   };
 

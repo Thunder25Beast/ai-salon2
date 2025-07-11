@@ -292,15 +292,15 @@
   className="max-w-full h-48 sm:h-64 object-cover rounded-lg mx-auto"
   />
   <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 justify-center">
-  <label className="btn-secondary cursor-pointer text-sm sm:text-base">
-  <Upload className="h-4 w-4 mr-2" />
-  Choose Different Photo
-  <input
-  type="file"
-  accept="image/*"
-  onChange={handleImageUpload}
-  className="hidden"
-  />
+  <label className="btn-secondary cursor-pointer text-sm sm:text-base flex items-center">
+    <Upload className="h-4 w-4 mr-2" />
+    <span>Choose Another Photo</span>
+    <input
+      type="file"
+      accept="image/*"
+      onChange={handleImageUpload}
+      className="hidden"
+    />
   </label>
   <button
   onClick={runAnalysis}

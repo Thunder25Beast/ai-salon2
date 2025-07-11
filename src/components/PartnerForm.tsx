@@ -303,18 +303,20 @@ const PartnerForm = () => {
                       Designation *
                     </label>
                     <select
-                      required
-                      value={formData.designation}
-                      onChange={(e) => setFormData({...formData, designation: e.target.value})}
-                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
-                    >
-                      <option value="">Select designation</option>
-                      <option value="owner">Owner</option>
-                      <option value="manager">Manager</option>
-                      <option value="director">Director</option>
-                      <option value="partner">Partner</option>
-                      <option value="other">Other</option>
-                    </select>
+  required
+  value={formData.designation}
+  onChange={(e) => setFormData({...formData, designation: e.target.value})}
+  className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-navy-50 focus:outline-none focus:border-coral-500 transition-colors"
+>
+  <option value="" disabled hidden>
+    Select designation
+  </option>
+  <option value="owner">Owner</option>
+  <option value="manager">Manager</option>
+  <option value="director">Director</option>
+  <option value="partner">Partner</option>
+  <option value="other">Other</option>
+</select>
                   </div>
 
                   <div>
