@@ -59,7 +59,7 @@ const PartnerForm = () => {
       const username = "admin";
       const password = "eagle123";
       const credentials = btoa(`${username}:${password}`);
-      await fetch('https://eagle-backend-v1-production-734c.up.railway.app/api/leads', {
+      await fetch('https://eagle-backend-v1-production.up.railway.app/api/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ const PartnerForm = () => {
       const username = "admin";
       const password = "eagle123";
       const credentials = btoa(`${username}:${password}`);
-      const res = await fetch('https://eagle-backend-v1-production-734c.up.railway.app/api/leads', {
+      const res = await fetch('https://eagle-backend-v1-production.up.railway.app/api/leads', {
         headers: {
           'Authorization': `Basic ${credentials}`
         }
